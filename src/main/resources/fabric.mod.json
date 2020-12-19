@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "squidcraft",
+  "version": "0.1.0",
+
+  "name": "SquidCraft",
+  "description": "This mod adds more food of squid!",
+  "authors": [ "squid233" ],
+  "contributors": [ "baka4n" ],
+  "contact": {
+    "homepage": "https://over-run.github.io/squidcraft",
+    "sources": "https://github.com/Over-Run/SquidCraft",
+    "issues": "https://github.com/Over-Run/SquidCraft/issues"
+  },
+
+  "license": "MIT",
+  "icon": "assets/squidcraft/icon.png",
+
+  "environment": "*",
+  "entrypoints": { "main": [ "io.github.overrun.squidcraft.SquidCraft" ] },
+  "mixins": [ "squidcraft.mixins.json" ],
+
+  "depends": {
+    "fabricloader": ">=0.10.0",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  }
+}
