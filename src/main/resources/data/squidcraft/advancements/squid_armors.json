@@ -1,0 +1,31 @@
+{
+  "parent": "squidcraft:squid_cookie",
+  "display": {
+    "icon": {
+      "item": "squidcraft:squid_helmet"
+    },
+    "title": {
+      "translate": "advancements.squidcraft.squid_armors.title"
+    },
+    "description": {
+      "translate": "advancements.squidcraft.squid_armors.desc"
+    },
+    "frame": "goal"
+  },
+  "criteria": {
+    "get_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          { "item": "squidcraft:squid_helmet" },
+          { "item": "squidcraft:squid_chestplate" },
+          { "item": "squidcraft:squid_leggings" },
+          { "item": "squidcraft:squid_boots" }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 10
+  }
+}

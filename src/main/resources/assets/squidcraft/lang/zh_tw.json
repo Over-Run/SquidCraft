@@ -1,5 +1,44 @@
 {
-  "item.squidcraft.shredded_squid": "魷魚絲",
+  "advancements.squidcraft.root.title": "魷魚工藝",
+  "advancements.squidcraft.root.desc": "感謝遊玩！",
+  "advancements.squidcraft.shredded_squid.title": "魷魚絲",
+  "advancements.squidcraft.shredded_squid.desc": "模組的基本物品，烤它",
+  "advancements.squidcraft.cooked_shredded_squid.title": "熟魷魚絲",
+  "advancements.squidcraft.cooked_shredded_squid.desc": "合成一塊餅！",
+  "advancements.squidcraft.squid_cookie.title": "魷魚餅",
+  "advancements.squidcraft.squid_cookie.desc": "合成一個方塊！",
+  "advancements.squidcraft.squid_armors.title": "魷魚盔甲",
+  "advancements.squidcraft.squid_armors.desc": "獲得魷魚盔甲",
 
-  "itemGroup.squidcraft.squidcraft": "魷魚工藝"
+  "item.squidcraft.shredded_squid": "魷魚絲",
+  "item.squidcraft.cooked_shredded_squid": "熟魷魚絲",
+  "item.squidcraft.squid_cookie": "魷魚餅",
+  "item.squidcraft.xmas_hat": "聖誕帽",
+  "item.squidcraft.squid_helmet": "魷魚頭盔",
+  "item.squidcraft.squid_chestplate": "魷魚胸甲",
+  "item.squidcraft.squid_leggings": "魷魚護腿",
+  "item.squidcraft.squid_boots": "魷魚靴子",
+
+  "block.squidcraft.soul_jack_o_lantern": "靈魂南瓜燈",
+  "block.squidcraft.squid_block": "魷魚塊",
+
+  "block.squidcraft.vertical_oak_slab": "竖橡木半磚",
+  "block.squidcraft.vertical_spruce_slab": "竖杉木半磚",
+  "block.squidcraft.vertical_birch_slab": "竖樺木半磚",
+  "block.squidcraft.vertical_jungle_slab": "竖叢林木半磚",
+  "block.squidcraft.vertical_acacia_slab": "竖相思木半磚",
+  "block.squidcraft.vertical_dark_oak_slab": "竖黑橡木半磚",
+  "block.squidcraft.vertical_crimson_slab": "竖緋紅蕈木半磚",
+  "block.squidcraft.vertical_warped_slab": "竖扭曲蕈木半磚",
+  "block.squidcraft.vertical_petrified_oak_slab": "竖石化橡木半磚",
+  "block.squidcraft.vertical_stone_slab": "竖石半磚",
+  "block.squidcraft.vertical_smooth_stone_slab": "竖平滑石半磚",
+  "block.squidcraft.vertical_cobblestone_slab": "竖鵝卵石半磚",
+  "block.squidcraft.vertical_mossy_cobblestone_slab": "竖青苔鵝卵石半磚",
+  "block.squidcraft.vertical_stone_brick_slab": "竖石磚半磚",
+  "block.squidcraft.vertical_mossy_stone_brick_slab": "竖青苔石磚半磚",
+  "block.squidcraft.vertical_andesite_slab": "竖安山岩半磚",
+
+  "itemGroup.squidcraft.squidcraft": "魷魚工藝",
+  "itemGroup.squidcraft.misc": "魷魚工藝 雜項"
 }

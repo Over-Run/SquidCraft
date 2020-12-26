@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A",
+    "A",
+    "A"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:smooth_stone"
+    }
+  },
+  "result": {
+    "item": "squidcraft:vertical_smooth_stone_slab"
+  }
+}

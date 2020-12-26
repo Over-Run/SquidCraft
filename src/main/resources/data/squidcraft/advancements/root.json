@@ -1,0 +1,17 @@
+{
+  "display": {
+    "icon": {
+      "item": "squidcraft:squid_cookie"
+    },
+    "title": {
+      "translate": "advancements.squidcraft.root.title"
+    },
+    "description": {
+      "translate": "advancements.squidcraft.root.desc"
+    },
+    "frame": "challenge",
+    "background": "squidcraft:textures/gui/advancements/backgrounds/squidcraft.png"
+  },
+  "criteria": { "tick": { "trigger": "minecraft:tick" } },
+  "rewards": { "experience": 1000 }
+}

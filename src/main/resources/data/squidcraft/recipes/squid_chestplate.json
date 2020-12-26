@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X#X",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "squidcraft:squid_cookie"
+    },
+    "#": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "squidcraft:squid_chestplate"
+  }
+}

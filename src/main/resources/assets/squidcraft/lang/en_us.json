@@ -1,5 +1,44 @@
 {
-  "item.squidcraft.shredded_squid": "Shredded Squid",
+  "advancements.squidcraft.root.title": "SquidCraft",
+  "advancements.squidcraft.root.desc": "Thanks for playing!",
+  "advancements.squidcraft.shredded_squid.title": "Shredded Squid",
+  "advancements.squidcraft.shredded_squid.desc": "The starting item, cook it",
+  "advancements.squidcraft.cooked_shredded_squid.title": "Cooked Shredded Squid",
+  "advancements.squidcraft.cooked_shredded_squid.desc": "Craft a Cookie!",
+  "advancements.squidcraft.squid_cookie.title": "Squid Cookie",
+  "advancements.squidcraft.squid_cookie.desc": "Craft a Block!",
+  "advancements.squidcraft.squid_armors.title": "Squid Armors",
+  "advancements.squidcraft.squid_armors.desc": "Got the Squid Armors",
 
-  "itemGroup.squidcraft.squidcraft": "SquidCraft"
+  "item.squidcraft.shredded_squid": "Shredded Squid",
+  "item.squidcraft.cooked_shredded_squid": "Cooked Shredded Squid",
+  "item.squidcraft.squid_cookie": "Squid Cookie",
+  "item.squidcraft.xmas_hat": "Christmas Hat",
+  "item.squidcraft.squid_helmet": "Squid Helmet",
+  "item.squidcraft.squid_chestplate": "Squid Chestplate",
+  "item.squidcraft.squid_leggings": "Squid Leggings",
+  "item.squidcraft.squid_boots": "Squid Boots",
+
+  "block.squidcraft.soul_jack_o_lantern": "Soul Jack o'Lantern",
+  "block.squidcraft.squid_block": "Squid Block",
+
+  "block.squidcraft.vertical_oak_slab": "Vertical Oak Slab",
+  "block.squidcraft.vertical_spruce_slab": "Vertical Spruce Slab",
+  "block.squidcraft.vertical_birch_slab": "Vertical Birch Slab",
+  "block.squidcraft.vertical_jungle_slab": "Vertical Jungle Slab",
+  "block.squidcraft.vertical_acacia_slab": "Vertical Acacia Slab",
+  "block.squidcraft.vertical_dark_oak_slab": "Vertical Dark Oak Slab",
+  "block.squidcraft.vertical_crimson_slab": "Vertical Crimson Slab",
+  "block.squidcraft.vertical_warped_slab": "Vertical Warped Slab",
+  "block.squidcraft.vertical_petrified_oak_slab": "Vertical Petrified Oak Slab",
+  "block.squidcraft.vertical_stone_slab": "Vertical Stone Slab",
+  "block.squidcraft.vertical_smooth_stone_slab": "Vertical Smooth Stone Slab",
+  "block.squidcraft.vertical_cobblestone_slab": "Vertical Cobblestone Slab",
+  "block.squidcraft.vertical_mossy_cobblestone_slab": "Vertical Mossy Cobblestone Slab",
+  "block.squidcraft.vertical_stone_brick_slab": "Vertical Stone Brick Slab",
+  "block.squidcraft.vertical_mossy_stone_brick_slab": "Vertical Mossy Stone Brick Slab",
+  "block.squidcraft.vertical_andesite_slab": "Vertical Andesite Slab",
+
+  "itemGroup.squidcraft.squidcraft": "SquidCraft",
+  "itemGroup.squidcraft.misc": "Squidcraft Miscellaneous"
 }

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A",
+    "A",
+    "A"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:spruce_planks"
+    }
+  },
+  "result": {
+    "item": "squidcraft:vertical_spruce_slab"
+  }
+}

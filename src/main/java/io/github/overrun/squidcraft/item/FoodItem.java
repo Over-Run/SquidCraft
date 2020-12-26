@@ -9,6 +9,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
 
+import static io.github.overrun.squidcraft.SquidCraft.MODID;
 import static io.github.overrun.squidcraft.SquidCraft.logger;
 
 /**
@@ -40,7 +41,7 @@ public final class FoodItem {
     }
 
     public Item build(@NotNull String id, @Nullable Consumer<Item.Settings> consumer) {
-        return build(new Identifier(id), consumer);
+        return build(new Identifier(MODID, id), consumer);
     }
 
     public Item build(@NotNull Identifier id) {

@@ -1,5 +1,44 @@
 {
-  "item.squidcraft.shredded_squid": "鱿鱼丝",
+  "advancements.squidcraft.root.title": "鱿鱼工艺",
+  "advancements.squidcraft.root.desc": "感谢游玩！",
+  "advancements.squidcraft.shredded_squid.title": "鱿鱼丝",
+  "advancements.squidcraft.shredded_squid.desc": "模组的基本物品，烤它",
+  "advancements.squidcraft.cooked_shredded_squid.title": "熟鱿鱼丝",
+  "advancements.squidcraft.cooked_shredded_squid.desc": "合成一块饼！",
+  "advancements.squidcraft.squid_cookie.title": "鱿鱼饼",
+  "advancements.squidcraft.squid_cookie.desc": "合成一个方块！",
+  "advancements.squidcraft.squid_armors.title": "鱿鱼盔甲",
+  "advancements.squidcraft.squid_armors.desc": "获得鱿鱼盔甲",
 
-  "itemGroup.squidcraft.squidcraft": "鱿鱼工艺"
+  "item.squidcraft.shredded_squid": "鱿鱼丝",
+  "item.squidcraft.cooked_shredded_squid": "熟鱿鱼丝",
+  "item.squidcraft.squid_cookie": "鱿鱼饼",
+  "item.squidcraft.xmas_hat": "圣诞帽",
+  "item.squidcraft.squid_helmet": "鱿鱼头盔",
+  "item.squidcraft.squid_chestplate": "鱿鱼胸甲",
+  "item.squidcraft.squid_leggings": "鱿鱼护腿",
+  "item.squidcraft.squid_boots": "鱿鱼靴子",
+
+  "block.squidcraft.soul_jack_o_lantern": "灵魂南瓜灯",
+  "block.squidcraft.squid_block": "鱿鱼块",
+
+  "block.squidcraft.vertical_oak_slab": "竖橡木台阶",
+  "block.squidcraft.vertical_spruce_slab": "竖云杉木台阶",
+  "block.squidcraft.vertical_birch_slab": "竖白桦木台阶",
+  "block.squidcraft.vertical_jungle_slab": "竖丛林木台阶",
+  "block.squidcraft.vertical_acacia_slab": "竖金合欢木台阶",
+  "block.squidcraft.vertical_dark_oak_slab": "竖深色橡木台阶",
+  "block.squidcraft.vertical_crimson_slab": "竖绯红木台阶",
+  "block.squidcraft.vertical_warped_slab": "竖诡异木台阶",
+  "block.squidcraft.vertical_petrified_oak_slab": "竖石化橡木台阶",
+  "block.squidcraft.vertical_stone_slab": "竖石台阶",
+  "block.squidcraft.vertical_smooth_stone_slab": "竖平滑石台阶",
+  "block.squidcraft.vertical_cobblestone_slab": "竖圆石台阶",
+  "block.squidcraft.vertical_mossy_cobblestone_slab": "竖苔石台阶",
+  "block.squidcraft.vertical_stone_brick_slab": "竖石砖台阶",
+  "block.squidcraft.vertical_mossy_stone_brick_slab": "竖苔石砖台阶",
+  "block.squidcraft.vertical_andesite_slab": "竖安山岩台阶",
+
+  "itemGroup.squidcraft.squidcraft": "鱿鱼工艺",
+  "itemGroup.squidcraft.misc": "鱿鱼工艺 杂项"
 }

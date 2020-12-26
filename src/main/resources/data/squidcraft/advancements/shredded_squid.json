@@ -1,0 +1,29 @@
+{
+  "parent": "squidcraft:root",
+  "display": {
+    "icon": {
+      "item": "squidcraft:shredded_squid"
+    },
+    "title": {
+      "translate": "advancements.squidcraft.shredded_squid.title"
+    },
+    "description": {
+      "translate": "advancements.squidcraft.shredded_squid.desc"
+    },
+    "frame": "task"
+  },
+  "criteria": {
+    "get_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "item": "squidcraft:shredded_squid" }]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "squidcraft:cooked_shredded_squid",
+      "squidcraft:cooked_shredded_squid_from_smoking"
+    ]
+  }
+}

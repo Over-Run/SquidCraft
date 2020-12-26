@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A",
+    "A",
+    "A"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:cobblestone"
+    }
+  },
+  "result": {
+    "item": "squidcraft:vertical_cobblestone_slab"
+  }
+}

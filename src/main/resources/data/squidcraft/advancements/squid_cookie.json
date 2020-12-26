@@ -1,0 +1,32 @@
+{
+  "parent": "squidcraft:cooked_shredded_squid",
+  "display": {
+    "icon": {
+      "item": "squidcraft:squid_cookie"
+    },
+    "title": {
+      "translate": "advancements.squidcraft.squid_cookie.title"
+    },
+    "description": {
+      "translate": "advancements.squidcraft.squid_cookie.desc"
+    },
+    "frame": "task"
+  },
+  "criteria": {
+    "get_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "item": "squidcraft:squid_cookie" }]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "squidcraft:squid_block",
+      "squidcraft:squid_helmet",
+      "squidcraft:squid_chestplate",
+      "squidcraft:squid_leggings",
+      "squidcraft:squid_boots"
+    ]
+  }
+}
