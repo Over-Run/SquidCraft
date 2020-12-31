@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A",
+    "A",
+    "A"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:diorite"
+    }
+  },
+  "result": {
+    "item": "squidcraft:vertical_diorite_slab"
+  }
+}

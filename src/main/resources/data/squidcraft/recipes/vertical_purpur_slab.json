@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A",
+    "A",
+    "A"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:purpur_block"
+    }
+  },
+  "result": {
+    "item": "squidcraft:vertical_purpur_slab"
+  }
+}

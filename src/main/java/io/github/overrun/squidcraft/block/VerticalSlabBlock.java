@@ -33,6 +33,11 @@ public class VerticalSlabBlock extends HorizontalFacingBlock implements Waterlog
     }
 
     @Override
+    public boolean hasSidedTransparency(BlockState state) {
+        return true;
+    }
+
+    @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
         stateManager.add(HORIZONTAL_FACING, WATERLOGGED);
     }

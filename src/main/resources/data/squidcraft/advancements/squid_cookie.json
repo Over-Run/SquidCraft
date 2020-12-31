@@ -26,7 +26,12 @@
       "squidcraft:squid_helmet",
       "squidcraft:squid_chestplate",
       "squidcraft:squid_leggings",
-      "squidcraft:squid_boots"
+      "squidcraft:squid_boots",
+      "squidcraft:squid_axe",
+      "squidcraft:squid_hoe",
+      "squidcraft:squid_pickaxe",
+      "squidcraft:squid_shovel",
+      "squidcraft:squid_sword"
     ]
   }
 }

@@ -1,0 +1,23 @@
+{
+  "parent": "squidcraft:compressor_block",
+  "display": {
+    "icon": {
+      "item": "squidcraft:compress_squid_block"
+    },
+    "title": {
+      "translate": "advancements.squidcraft.compress_squid_block.title"
+    },
+    "description": {
+      "translate": "advancements.squidcraft.compress_squid_block.desc"
+    },
+    "frame": "task"
+  },
+  "criteria": {
+    "get_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "item": "squidcraft:compress_squid_block" }]
+      }
+    }
+  }
+}

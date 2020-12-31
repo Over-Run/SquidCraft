@@ -4,9 +4,14 @@ import io.github.overrun.squidcraft.block.Blocks;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.item.AxeItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.FoodComponent;
+import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.PickaxeItem;
+import net.minecraft.item.ShovelItem;
+import net.minecraft.item.SwordItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -35,30 +40,70 @@ public final class Items {
     public static final Item SQUID_CHESTPLATE = register("squid_chestplate", new ArmorItem(ArmorMaterials.SQUID, EquipmentSlot.CHEST, getDefault()));
     public static final Item SQUID_LEGGINGS = register("squid_leggings", new ArmorItem(ArmorMaterials.SQUID, EquipmentSlot.LEGS, getDefault()));
     public static final Item SQUID_BOOTS = register("squid_boots", new ArmorItem(ArmorMaterials.SQUID, EquipmentSlot.FEET, getDefault()));
+    public static final Item SQUID_AXE = register("squid_axe", new AxeItem(ToolMaterials.SQUID, 6.0f, -3.1f, getDefault()) {});
+    public static final Item SQUID_HOE = register("squid_hoe", new HoeItem(ToolMaterials.SQUID, -2, -1.0f, getDefault()) {});
+    public static final Item SQUID_PICKAXE = register("squid_pickaxe", new PickaxeItem(ToolMaterials.SQUID, 1, -2.8f, getDefault()) {});
+    public static final Item SQUID_SHOVEL = register("squid_shovel", new ShovelItem(ToolMaterials.SQUID, 1.5f, -3.0f, getDefault()));
+    public static final Item SQUID_SWORD = register("squid_sword", new SwordItem(ToolMaterials.SQUID, 3, -2.4f, getDefault()));
 
     // Block Items
 
-    public static final Item SOUL_JACK_O_LANTERN = register("soul_jack_o_lantern", new BlockItem(Blocks.SOUL_JACK_O_LANTERN, getMisc()));
-    public static final Item SQUID_BLOCK = createBlockMeat(50, 1.4f, "squid_block", Blocks.SQUID_BLOCK, getDefault());
+    public static final Item SOUL_JACK_O_LANTERN = register(Blocks.SOUL_JACK_O_LANTERN, getMisc());
+    public static final Item SQUID_BLOCK = createBlockMeat(50, 1.4f, Blocks.SQUID_BLOCK, getDefault());
+    public static final Item COMPRESS_SQUID_BLOCK = createBlockMeat(70, 2.5f, Blocks.COMPRESS_SQUID_BLOCK, getDefault());
 
-    public static final Item VERTICAL_OAK_SLAB = register("vertical_oak_slab", new BlockItem(Blocks.VERTICAL_OAK_SLAB, getMisc()));
-    public static final Item VERTICAL_SPRUCE_SLAB = register("vertical_spruce_slab", new BlockItem(Blocks.VERTICAL_SPRUCE_SLAB, getMisc()));
-    public static final Item VERTICAL_BIRCH_SLAB = register("vertical_birch_slab", new BlockItem(Blocks.VERTICAL_BIRCH_SLAB, getMisc()));
-    public static final Item VERTICAL_JUNGLE_SLAB = register("vertical_jungle_slab", new BlockItem(Blocks.VERTICAL_JUNGLE_SLAB, getMisc()));
-    public static final Item VERTICAL_ACACIA_SLAB = register("vertical_acacia_slab", new BlockItem(Blocks.VERTICAL_ACACIA_SLAB, getMisc()));
-    public static final Item VERTICAL_DARK_OAK_SLAB = register("vertical_dark_oak_slab", new BlockItem(Blocks.VERTICAL_DARK_OAK_SLAB, getMisc()));
-    public static final Item VERTICAL_CRIMSON_SLAB = register("vertical_crimson_slab", new BlockItem(Blocks.VERTICAL_CRIMSON_SLAB, getMisc()));
-    public static final Item VERTICAL_WARPED_SLAB = register("vertical_warped_slab", new BlockItem(Blocks.VERTICAL_WARPED_SLAB, getMisc()));
-    public static final Item VERTICAL_PETRIFIED_OAK_SLAB = register("vertical_petrified_oak_slab", new BlockItem(Blocks.VERTICAL_PETRIFIED_OAK_SLAB, getMisc()));
-    public static final Item VERTICAL_STONE_SLAB = register("vertical_stone_slab", new BlockItem(Blocks.VERTICAL_STONE_SLAB, getMisc()));
-    public static final Item VERTICAL_SMOOTH_STONE_SLAB = register("vertical_smooth_stone_slab", new BlockItem(Blocks.VERTICAL_SMOOTH_STONE_SLAB, getMisc()));
-    public static final Item VERTICAL_COBBLESTONE_SLAB = register("vertical_cobblestone_slab", new BlockItem(Blocks.VERTICAL_COBBLESTONE_SLAB, getMisc()));
-    public static final Item VERTICAL_MOSSY_COBBLESTONE_SLAB = register("vertical_mossy_cobblestone_slab", new BlockItem(Blocks.VERTICAL_MOSSY_COBBLESTONE_SLAB, getMisc()));
-    public static final Item VERTICAL_STONE_BRICK_SLAB = register("vertical_stone_brick_slab", new BlockItem(Blocks.VERTICAL_STONE_BRICK_SLAB, getMisc()));
-    public static final Item VERTICAL_MOSSY_STONE_BRICK_SLAB = register("vertical_mossy_stone_brick_slab", new BlockItem(Blocks.VERTICAL_MOSSY_STONE_BRICK_SLAB, getMisc()));
-    public static final Item VERTICAL_ANDESITE_SLAB = register("vertical_andesite_slab", new BlockItem(Blocks.VERTICAL_ANDESITE_SLAB, getMisc()));
+    public static final Item VERTICAL_OAK_SLAB = registerVtcSlbItm(Blocks.VERTICAL_OAK_SLAB);
+    public static final Item VERTICAL_SPRUCE_SLAB = registerVtcSlbItm(Blocks.VERTICAL_SPRUCE_SLAB);
+    public static final Item VERTICAL_BIRCH_SLAB = registerVtcSlbItm(Blocks.VERTICAL_BIRCH_SLAB);
+    public static final Item VERTICAL_JUNGLE_SLAB = registerVtcSlbItm(Blocks.VERTICAL_JUNGLE_SLAB);
+    public static final Item VERTICAL_ACACIA_SLAB = registerVtcSlbItm(Blocks.VERTICAL_ACACIA_SLAB);
+    public static final Item VERTICAL_DARK_OAK_SLAB = registerVtcSlbItm(Blocks.VERTICAL_DARK_OAK_SLAB);
+    public static final Item VERTICAL_CRIMSON_SLAB = registerVtcSlbItm(Blocks.VERTICAL_CRIMSON_SLAB);
+    public static final Item VERTICAL_WARPED_SLAB = registerVtcSlbItm(Blocks.VERTICAL_WARPED_SLAB);
+    public static final Item VERTICAL_PETRIFIED_OAK_SLAB = registerVtcSlbItm(Blocks.VERTICAL_PETRIFIED_OAK_SLAB);
+    public static final Item VERTICAL_STONE_SLAB = registerVtcSlbItm(Blocks.VERTICAL_STONE_SLAB);
+    public static final Item VERTICAL_SMOOTH_STONE_SLAB = registerVtcSlbItm(Blocks.VERTICAL_SMOOTH_STONE_SLAB);
+    public static final Item VERTICAL_COBBLESTONE_SLAB = registerVtcSlbItm(Blocks.VERTICAL_COBBLESTONE_SLAB);
+    public static final Item VERTICAL_MOSSY_COBBLESTONE_SLAB = registerVtcSlbItm(Blocks.VERTICAL_MOSSY_COBBLESTONE_SLAB);
+    public static final Item VERTICAL_STONE_BRICK_SLAB = registerVtcSlbItm(Blocks.VERTICAL_STONE_BRICK_SLAB);
+    public static final Item VERTICAL_MOSSY_STONE_BRICK_SLAB = registerVtcSlbItm(Blocks.VERTICAL_MOSSY_STONE_BRICK_SLAB);
+    public static final Item VERTICAL_ANDESITE_SLAB = registerVtcSlbItm(Blocks.VERTICAL_ANDESITE_SLAB);
+    public static final Item VERTICAL_POLISHED_ANDESITE_SLAB = registerVtcSlbItm(Blocks.VERTICAL_POLISHED_ANDESITE_SLAB);
+    public static final Item VERTICAL_DIORITE_SLAB = registerVtcSlbItm(Blocks.VERTICAL_DIORITE_SLAB);
+    public static final Item VERTICAL_POLISHED_DIORITE_SLAB = registerVtcSlbItm(Blocks.VERTICAL_POLISHED_DIORITE_SLAB);
+    public static final Item VERTICAL_GRANITE_SLAB = registerVtcSlbItm(Blocks.VERTICAL_GRANITE_SLAB);
+    public static final Item VERTICAL_POLISHED_GRANITE_SLAB = registerVtcSlbItm(Blocks.VERTICAL_POLISHED_GRANITE_SLAB);
+    public static final Item VERTICAL_SANDSTONE_SLAB = registerVtcSlbItm(Blocks.VERTICAL_SANDSTONE_SLAB);
+    public static final Item VERTICAL_CUT_SANDSTONE_SLAB = registerVtcSlbItm(Blocks.VERTICAL_CUT_SANDSTONE_SLAB);
+    public static final Item VERTICAL_SMOOTH_SANDSTONE_SLAB = registerVtcSlbItm(Blocks.VERTICAL_SMOOTH_SANDSTONE_SLAB);
+    public static final Item VERTICAL_RED_SANDSTONE_SLAB = registerVtcSlbItm(Blocks.VERTICAL_RED_SANDSTONE_SLAB);
+    public static final Item VERTICAL_CUT_RED_SANDSTONE_SLAB = registerVtcSlbItm(Blocks.VERTICAL_CUT_RED_SANDSTONE_SLAB);
+    public static final Item VERTICAL_SMOOTH_RED_SANDSTONE_SLAB = registerVtcSlbItm(Blocks.VERTICAL_SMOOTH_RED_SANDSTONE_SLAB);
+    public static final Item VERTICAL_BRICK_SLAB = registerVtcSlbItm(Blocks.VERTICAL_BRICK_SLAB);
+    public static final Item VERTICAL_PRISMARINE_SLAB = registerVtcSlbItm(Blocks.VERTICAL_PRISMARINE_SLAB);
+    public static final Item VERTICAL_PRISMARINE_BRICK_SLAB = registerVtcSlbItm(Blocks.VERTICAL_PRISMARINE_BRICK_SLAB);
+    public static final Item VERTICAL_DARK_PRISMARINE_SLAB = registerVtcSlbItm(Blocks.VERTICAL_DARK_PRISMARINE_SLAB);
+    public static final Item VERTICAL_NETHER_BRICK_SLAB = registerVtcSlbItm(Blocks.VERTICAL_NETHER_BRICK_SLAB);
+    public static final Item VERTICAL_RED_NETHER_BRICK_SLAB = registerVtcSlbItm(Blocks.VERTICAL_RED_NETHER_BRICK_SLAB);
+    public static final Item VERTICAL_QUARTZ_SLAB = registerVtcSlbItm(Blocks.VERTICAL_QUARTZ_SLAB);
+    public static final Item VERTICAL_SMOOTH_QUARTZ_SLAB = registerVtcSlbItm(Blocks.VERTICAL_SMOOTH_QUARTZ_SLAB);
+    public static final Item VERTICAL_PURPUR_SLAB = registerVtcSlbItm(Blocks.VERTICAL_PURPUR_SLAB);
+    public static final Item VERTICAL_END_STONE_BRICK_SLAB = registerVtcSlbItm(Blocks.VERTICAL_END_STONE_BRICK_SLAB);
+    public static final Item VERTICAL_BLACKSTONE_SLAB = registerVtcSlbItm(Blocks.VERTICAL_BLACKSTONE_SLAB);
+    public static final Item VERTICAL_POLISHED_BLACKSTONE = registerVtcSlbItm(Blocks.VERTICAL_POLISHED_BLACKSTONE);
+    public static final Item VERTICAL_POLISHED_BLACKSTONE_BRICK_SLAB = registerVtcSlbItm(Blocks.VERTICAL_POLISHED_BLACKSTONE_BRICK_SLAB);
+
+    public static final Item COMPRESSOR_BLOCK = register(Blocks.COMPRESSOR_BLOCK, getDefault());
 
     // Block Items End
+
+    public static Item register(Block block, Item.Settings settings) {
+        return register(Registry.BLOCK.getId(block).getPath(), new BlockItem(block, settings));
+    }
+
+    public static Item registerVtcSlbItm(Block block) {
+        return register(block, getMisc());
+    }
 
     private static Item register(String id, Item item) {
         return Registry.register(Registry.ITEM, new Identifier(MODID, id), item);
@@ -72,8 +117,8 @@ public final class Items {
         return FoodItem.of(consumer);
     }
 
-    public static Item createBlockMeat(int hunger, float sat, String id, Block block, Item.Settings settings) {
-        return register(id, new BlockItem(block, settings.food(new FoodComponent.Builder()
+    public static Item createBlockMeat(int hunger, float sat, Block block, Item.Settings settings) {
+        return register(Registry.BLOCK.getId(block).getPath(), new BlockItem(block, settings.food(new FoodComponent.Builder()
                 .hunger(hunger).saturationModifier(sat)
                 .meat().alwaysEdible().build())));
     }

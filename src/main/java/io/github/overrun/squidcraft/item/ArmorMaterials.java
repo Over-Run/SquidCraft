@@ -24,10 +24,10 @@ public final class ArmorMaterials {
             .knockbackResistance(0.0f)
             .build();
     public static final ArmorMaterial SQUID = ArmorMaterials.of("squid")
-            .durabilityMultiplier(2)
-            .protectionAmounts(new int[]{2, 4, 3, 2})
-            .enchantability(15)
-            .equipSound(SoundEvents.ITEM_ARMOR_EQUIP_LEATHER)
+            .durabilityMultiplier(33)
+            .protectionAmounts(new int[]{3, 8, 6, 3})
+            .enchantability(10)
+            .equipSound(SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND)
             .repairIngredient(Ingredient.ofItems(Items.SQUID_COOKIE))
             .build();
 

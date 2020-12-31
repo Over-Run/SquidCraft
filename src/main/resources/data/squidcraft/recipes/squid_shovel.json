@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A",
+    "B",
+    "C"
+  ],
+  "key": {
+    "A": { "item": "squidcraft:squid_cookie" },
+    "B": { "item": "minecraft:stick" },
+    "C": { "item": "minecraft:diamond" }
+  },
+  "result": { "item": "squidcraft:squid_shovel" }
+}

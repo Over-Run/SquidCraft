@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A",
+    "A",
+    "A"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:brick"
+    }
+  },
+  "result": {
+    "item": "squidcraft:vertical_brick_slab"
+  }
+}

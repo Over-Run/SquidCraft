@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A",
+    "A",
+    "A"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:dark_prismarine"
+    }
+  },
+  "result": {
+    "item": "squidcraft:vertical_dark_prismarine_slab"
+  }
+}

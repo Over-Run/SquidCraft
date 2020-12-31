@@ -1,0 +1,32 @@
+{
+  "parent": "squidcraft:squid_cookie",
+  "display": {
+    "icon": {
+      "item": "squidcraft:squid_pickaxe"
+    },
+    "title": {
+      "translate": "advancements.squidcraft.squid_tools.title"
+    },
+    "description": {
+      "translate": "advancements.squidcraft.squid_tools.desc"
+    },
+    "frame": "goal"
+  },
+  "criteria": {
+    "get_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          { "item": "squidcraft:squid_axe" },
+          { "item": "squidcraft:squid_hoe" },
+          { "item": "squidcraft:squid_pickaxe" },
+          { "item": "squidcraft:squid_shovel" },
+          { "item": "squidcraft:squid_sword" }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 10
+  }
+}

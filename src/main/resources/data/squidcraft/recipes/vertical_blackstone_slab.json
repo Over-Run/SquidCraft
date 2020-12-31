@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A",
+    "A",
+    "A"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:blackstone"
+    }
+  },
+  "result": {
+    "item": "squidcraft:vertical_blackstone_slab"
+  }
+}

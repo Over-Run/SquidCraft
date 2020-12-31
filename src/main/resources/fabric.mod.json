@@ -8,7 +8,7 @@
   "authors": [ "squid233" ],
   "contributors": [ "baka4n" ],
   "contact": {
-    "homepage": "https://over-run.github.io/squidcraft",
+    "homepage": "https://over-run.github.io/wiki/squidcraft",
     "sources": "https://github.com/Over-Run/SquidCraft",
     "issues": "https://github.com/Over-Run/SquidCraft/issues"
   },
@@ -17,7 +17,10 @@
   "icon": "assets/squidcraft/icon.png",
 
   "environment": "*",
-  "entrypoints": { "main": [ "io.github.overrun.squidcraft.SquidCraft" ] },
+  "entrypoints": {
+    "main": ["io.github.overrun.squidcraft.SquidCraft"],
+    "client": ["io.github.overrun.squidcraft.client.SquidCraftClient"]
+  },
   "mixins": [ "squidcraft.mixins.json" ],
 
   "depends": {
