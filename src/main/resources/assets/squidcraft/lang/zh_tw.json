@@ -21,7 +21,6 @@
   "item.squidcraft.shredded_squid": "魷魚絲",
   "item.squidcraft.cooked_shredded_squid": "熟魷魚絲",
   "item.squidcraft.squid_cookie": "魷魚餅",
-  "item.squidcraft.xmas_hat": "聖誕帽",
   "item.squidcraft.squid_helmet": "魷魚頭盔",
   "item.squidcraft.squid_chestplate": "魷魚胸甲",
   "item.squidcraft.squid_leggings": "魷魚護腿",
@@ -31,11 +30,16 @@
   "item.squidcraft.squid_pickaxe": "魷魚鎬",
   "item.squidcraft.squid_shovel": "魷魚鍬",
   "item.squidcraft.squid_sword": "魷魚劍",
+  "item.squidcraft.xmas_hat": "聖誕帽",
+  "item.squidcraft.miner_hat": "礦工帽",
+  "item.squidcraft.iron_plate": "鐵盤",
+  "item.squidcraft.sizzling_squid": "鐵板魷魚",
 
   "block.squidcraft.soul_jack_o_lantern": "靈魂南瓜燈",
   "block.squidcraft.squid_block": "魷魚塊",
   "block.squidcraft.compress_squid_block": "壓縮魷魚塊",
   "block.squidcraft.compressor_block": "壓縮機",
+  "block.squidcraft.bin_block": "垃圾桶",
 
   "block.squidcraft.vertical_oak_slab": "竖橡木半磚",
   "block.squidcraft.vertical_spruce_slab": "竖杉木半磚",
@@ -79,5 +83,13 @@
   "block.squidcraft.vertical_polished_blackstone_brick_slab": "竖拋光黑石磚半磚",
 
   "itemGroup.squidcraft.squidcraft": "魷魚工藝",
-  "itemGroup.squidcraft.misc": "魷魚工藝 雜項"
+  "itemGroup.squidcraft.misc": "魷魚工藝 雜項",
+
+  "commands.squidcraft.config.add": "已添加配置“%s”。",
+  "commands.squidcraft.config.add.restart": "當完成所有變更時，請重啟或使用“/squidcraft config reload”指令。",
+
+  "text.squidcraft.hun": "飢餓值：%d",
+  "text.squidcraft.reloadConfig": "重載配置",
+  "text.squidcraft.sat": "飽食度：%d",
+  "text.squidcraft.dispose": "將在關閉時摧毀所有物品"
 }

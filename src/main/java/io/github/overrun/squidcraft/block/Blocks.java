@@ -5,88 +5,97 @@ import net.minecraft.block.Block;
 import net.minecraft.block.CarvedPumpkinBlock;
 import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+import java.util.function.Supplier;
+
 import static io.github.overrun.squidcraft.SquidCraft.MODID;
+import static net.minecraft.block.AbstractBlock.Settings.copy;
 import static net.minecraft.block.AbstractBlock.Settings.of;
 import static net.minecraft.block.Blocks.*;
 
 /**
- * Don't {@code implement} this class!
- * <p>全是{@code static}的你{@code implements}了也没用</p>
- *
  * @author squid233
  * @since 2020/12/19
  */
-public interface Blocks {
-    Material FOOD = new Material.Builder(MaterialColor.WHITE_TERRACOTTA).build();
+public final class Blocks {
+    public static final Material FOOD = new Material.Builder(MaterialColor.WHITE_TERRACOTTA).build();
 
-    Block SOUL_JACK_O_LANTERN = register(
+    public static final Block SOUL_JACK_O_LANTERN = register(
             "soul_jack_o_lantern",
-            new CarvedPumpkinBlock(of(Material.GOURD, MaterialColor.ORANGE)
-                    .strength(1.0F)
-                    .sounds(BlockSoundGroup.WOOD)
-                    .luminance(state -> 15)
-                    .allowsSpawning((state, world, pos, type) -> true)
-            ) {});
+            new CarvedPumpkinBlock(copy(JACK_O_LANTERN)) {});
 
-    Block SQUID_BLOCK = register("squid_block", new Block(of(FOOD)));
-    Block COMPRESS_SQUID_BLOCK = register("compress_squid_block", new Block(of(FOOD).strength(0.1f)));
+    public static final Block SQUID_BLOCK = register("squid_block", new Block(of(FOOD)));
+    public static final Block COMPRESS_SQUID_BLOCK = register("compress_squid_block", new Block(of(FOOD).strength(0.1f)));
 
     // Vertical slab blocks
 
-    Block VERTICAL_OAK_SLAB = registerVerticalSlabBlock("oak", OAK_SLAB);
-    Block VERTICAL_SPRUCE_SLAB = registerVerticalSlabBlock("spruce", SPRUCE_SLAB);
-    Block VERTICAL_BIRCH_SLAB = registerVerticalSlabBlock("birch", BIRCH_SLAB);
-    Block VERTICAL_JUNGLE_SLAB = registerVerticalSlabBlock("jungle", JUNGLE_SLAB);
-    Block VERTICAL_ACACIA_SLAB = registerVerticalSlabBlock("acacia", ACACIA_SLAB);
-    Block VERTICAL_DARK_OAK_SLAB = registerVerticalSlabBlock("dark_oak", DARK_OAK_SLAB);
-    Block VERTICAL_CRIMSON_SLAB = registerVerticalSlabBlock("crimson", CRIMSON_SLAB);
-    Block VERTICAL_WARPED_SLAB = registerVerticalSlabBlock("warped", WARPED_SLAB);
-    Block VERTICAL_PETRIFIED_OAK_SLAB = registerVerticalSlabBlock("petrified_oak", PETRIFIED_OAK_SLAB);
-    Block VERTICAL_STONE_SLAB = registerVerticalSlabBlock("stone", STONE_SLAB);
-    Block VERTICAL_SMOOTH_STONE_SLAB = registerVerticalSlabBlock("smooth_stone", SMOOTH_STONE_SLAB);
-    Block VERTICAL_COBBLESTONE_SLAB = registerVerticalSlabBlock("cobblestone", COBBLESTONE_SLAB);
-    Block VERTICAL_MOSSY_COBBLESTONE_SLAB = registerVerticalSlabBlock("mossy_cobblestone", MOSSY_COBBLESTONE_SLAB);
-    Block VERTICAL_STONE_BRICK_SLAB = registerVerticalSlabBlock("stone_brick", STONE_BRICK_SLAB);
-    Block VERTICAL_MOSSY_STONE_BRICK_SLAB = registerVerticalSlabBlock("mossy_stone_brick", MOSSY_STONE_BRICK_SLAB);
-    Block VERTICAL_ANDESITE_SLAB = registerVerticalSlabBlock("andesite", ANDESITE_SLAB);
-    Block VERTICAL_POLISHED_ANDESITE_SLAB = registerVerticalSlabBlock("polished_andesite", POLISHED_ANDESITE_SLAB);
-    Block VERTICAL_DIORITE_SLAB = registerVerticalSlabBlock("diorite", DIORITE_SLAB);
-    Block VERTICAL_POLISHED_DIORITE_SLAB = registerVerticalSlabBlock("polished_diorite", POLISHED_DIORITE_SLAB);
-    Block VERTICAL_GRANITE_SLAB = registerVerticalSlabBlock("granite", GRANITE_SLAB);
-    Block VERTICAL_POLISHED_GRANITE_SLAB = registerVerticalSlabBlock("polished_granite", POLISHED_GRANITE_SLAB);
-    Block VERTICAL_SANDSTONE_SLAB = registerVerticalSlabBlock("sandstone", SANDSTONE_SLAB);
-    Block VERTICAL_CUT_SANDSTONE_SLAB = registerVerticalSlabBlock("cut_sandstone", CUT_SANDSTONE_SLAB);
-    Block VERTICAL_SMOOTH_SANDSTONE_SLAB = registerVerticalSlabBlock("smooth_sandstone", SMOOTH_SANDSTONE_SLAB);
-    Block VERTICAL_RED_SANDSTONE_SLAB = registerVerticalSlabBlock("red_sandstone", RED_SANDSTONE_SLAB);
-    Block VERTICAL_CUT_RED_SANDSTONE_SLAB = registerVerticalSlabBlock("cut_red_sandstone", CUT_RED_SANDSTONE_SLAB);
-    Block VERTICAL_SMOOTH_RED_SANDSTONE_SLAB = registerVerticalSlabBlock("smooth_red_sandstone", SMOOTH_RED_SANDSTONE_SLAB);
-    Block VERTICAL_BRICK_SLAB = registerVerticalSlabBlock("brick", BRICK_SLAB);
-    Block VERTICAL_PRISMARINE_SLAB = registerVerticalSlabBlock("prismarine", PRISMARINE_SLAB);
-    Block VERTICAL_PRISMARINE_BRICK_SLAB = registerVerticalSlabBlock("prismarine_brick", PRISMARINE_BRICK_SLAB);
-    Block VERTICAL_DARK_PRISMARINE_SLAB = registerVerticalSlabBlock("dark_prismarine", DARK_PRISMARINE_SLAB);
-    Block VERTICAL_NETHER_BRICK_SLAB = registerVerticalSlabBlock("nether_brick", NETHER_BRICK_SLAB);
-    Block VERTICAL_RED_NETHER_BRICK_SLAB = registerVerticalSlabBlock("red_nether_brick", RED_NETHER_BRICK_SLAB);
-    Block VERTICAL_QUARTZ_SLAB = registerVerticalSlabBlock("quartz", QUARTZ_SLAB);
-    Block VERTICAL_SMOOTH_QUARTZ_SLAB = registerVerticalSlabBlock("smooth_quartz", SMOOTH_QUARTZ_SLAB);
-    Block VERTICAL_PURPUR_SLAB = registerVerticalSlabBlock("purpur", PURPUR_SLAB);
-    Block VERTICAL_END_STONE_BRICK_SLAB = registerVerticalSlabBlock("end_stone_brick", END_STONE_BRICK_SLAB);
-    Block VERTICAL_BLACKSTONE_SLAB = registerVerticalSlabBlock("blackstone", BLACKSTONE_SLAB);
-    Block VERTICAL_POLISHED_BLACKSTONE = registerVerticalSlabBlock("polished_blackstone", POLISHED_BLACKSTONE);
-    Block VERTICAL_POLISHED_BLACKSTONE_BRICK_SLAB = registerVerticalSlabBlock("polished_blackstone_brick", POLISHED_BLACKSTONE_BRICK_SLAB);
+    public static final Block VERTICAL_OAK_SLAB = registerVsb("oak", OAK_SLAB);
+    public static final Block VERTICAL_SPRUCE_SLAB = registerVsb("spruce", SPRUCE_SLAB);
+    public static final Block VERTICAL_BIRCH_SLAB = registerVsb("birch", BIRCH_SLAB);
+    public static final Block VERTICAL_JUNGLE_SLAB = registerVsb("jungle", JUNGLE_SLAB);
+    public static final Block VERTICAL_ACACIA_SLAB = registerVsb("acacia", ACACIA_SLAB);
+    public static final Block VERTICAL_DARK_OAK_SLAB = registerVsb("dark_oak", DARK_OAK_SLAB);
+    public static final Block VERTICAL_CRIMSON_SLAB = registerVsb("crimson", CRIMSON_SLAB);
+    public static final Block VERTICAL_WARPED_SLAB = registerVsb("warped", WARPED_SLAB);
+    public static final Block VERTICAL_PETRIFIED_OAK_SLAB = registerVsb("petrified_oak", PETRIFIED_OAK_SLAB);
+    public static final Block VERTICAL_STONE_SLAB = registerVsb("stone", STONE_SLAB);
+    public static final Block VERTICAL_SMOOTH_STONE_SLAB = registerVsb("smooth_stone", SMOOTH_STONE_SLAB);
+    public static final Block VERTICAL_COBBLESTONE_SLAB = registerVsb("cobblestone", COBBLESTONE_SLAB);
+    public static final Block VERTICAL_MOSSY_COBBLESTONE_SLAB = registerVsb("mossy_cobblestone", MOSSY_COBBLESTONE_SLAB);
+    public static final Block VERTICAL_STONE_BRICK_SLAB = registerVsb("stone_brick", STONE_BRICK_SLAB);
+    public static final Block VERTICAL_MOSSY_STONE_BRICK_SLAB = registerVsb("mossy_stone_brick", MOSSY_STONE_BRICK_SLAB);
+    public static final Block VERTICAL_ANDESITE_SLAB = registerVsb("andesite", ANDESITE_SLAB);
+    public static final Block VERTICAL_POLISHED_ANDESITE_SLAB = registerVsb("polished_andesite", POLISHED_ANDESITE_SLAB);
+    public static final Block VERTICAL_DIORITE_SLAB = registerVsb("diorite", DIORITE_SLAB);
+    public static final Block VERTICAL_POLISHED_DIORITE_SLAB = registerVsb("polished_diorite", POLISHED_DIORITE_SLAB);
+    public static final Block VERTICAL_GRANITE_SLAB = registerVsb("granite", GRANITE_SLAB);
+    public static final Block VERTICAL_POLISHED_GRANITE_SLAB = registerVsb("polished_granite", POLISHED_GRANITE_SLAB);
+    public static final Block VERTICAL_SANDSTONE_SLAB = registerVsb("sandstone", SANDSTONE_SLAB);
+    public static final Block VERTICAL_CUT_SANDSTONE_SLAB = registerVsb("cut_sandstone", CUT_SANDSTONE_SLAB);
+    public static final Block VERTICAL_SMOOTH_SANDSTONE_SLAB = registerVsb("smooth_sandstone", SMOOTH_SANDSTONE_SLAB);
+    public static final Block VERTICAL_RED_SANDSTONE_SLAB = registerVsb("red_sandstone", RED_SANDSTONE_SLAB);
+    public static final Block VERTICAL_CUT_RED_SANDSTONE_SLAB = registerVsb("cut_red_sandstone", CUT_RED_SANDSTONE_SLAB);
+    public static final Block VERTICAL_SMOOTH_RED_SANDSTONE_SLAB = registerVsb("smooth_red_sandstone", SMOOTH_RED_SANDSTONE_SLAB);
+    public static final Block VERTICAL_BRICK_SLAB = registerVsb("brick", BRICK_SLAB);
+    public static final Block VERTICAL_PRISMARINE_SLAB = registerVsb("prismarine", PRISMARINE_SLAB);
+    public static final Block VERTICAL_PRISMARINE_BRICK_SLAB = registerVsb("prismarine_brick", PRISMARINE_BRICK_SLAB);
+    public static final Block VERTICAL_DARK_PRISMARINE_SLAB = registerVsb("dark_prismarine", DARK_PRISMARINE_SLAB);
+    public static final Block VERTICAL_NETHER_BRICK_SLAB = registerVsb("nether_brick", NETHER_BRICK_SLAB);
+    public static final Block VERTICAL_RED_NETHER_BRICK_SLAB = registerVsb("red_nether_brick", RED_NETHER_BRICK_SLAB);
+    public static final Block VERTICAL_QUARTZ_SLAB = registerVsb("quartz", QUARTZ_SLAB);
+    public static final Block VERTICAL_SMOOTH_QUARTZ_SLAB = registerVsb("smooth_quartz", SMOOTH_QUARTZ_SLAB);
+    public static final Block VERTICAL_PURPUR_SLAB = registerVsb("purpur", PURPUR_SLAB);
+    public static final Block VERTICAL_END_STONE_BRICK_SLAB = registerVsb("end_stone_brick", END_STONE_BRICK_SLAB);
+    public static final Block VERTICAL_BLACKSTONE_SLAB = registerVsb("blackstone", BLACKSTONE_SLAB);
+    public static final Block VERTICAL_POLISHED_BLACKSTONE = registerVsb("polished_blackstone", POLISHED_BLACKSTONE);
+    public static final Block VERTICAL_POLISHED_BLACKSTONE_BRICK_SLAB = registerVsb("polished_blackstone_brick", POLISHED_BLACKSTONE_BRICK_SLAB);
 
-    Block COMPRESSOR_BLOCK = register("compressor_block", new CompressorBlock(AbstractBlock.Settings.copy(IRON_BLOCK)));
-    BlockEntityType<CompressorBlockEntity> COMPRESSOR_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(MODID, "compressor_block"), BlockEntityType.Builder.create(CompressorBlockEntity::new, COMPRESSOR_BLOCK).build(null));
+    public static final Block COMPRESSOR_BLOCK = register("compressor_block", new CompressorBlock(copy(IRON_BLOCK)));
+    public static final Block BIN_BLOCK = register("bin_block", new BinBlock(copy(IRON_BLOCK)));
+    public static final BlockEntityType<CompressorBlockEntity> COMPRESSOR_BLOCK_ENTITY =
+            register("compressor_block", CompressorBlockEntity::new, COMPRESSOR_BLOCK);
+    public static final BlockEntityType<BinBlockEntity> BIN_BLOCK_ENTITY =
+            register("bin_block", BinBlockEntity::new, BIN_BLOCK);
 
-    static Block registerVerticalSlabBlock(String type, AbstractBlock block) {
-        return register(String.format("vertical_%s_slab", type), new VerticalSlabBlock(AbstractBlock.Settings.copy(block)));
+    private static Block registerVsb(String type, AbstractBlock block) {
+        return register("vertical_" + type + "_slab", new VerticalSlabBlock(copy(block)));
     }
 
-    static Block register(String id, Block block) {
+    private static Block register(String id, Block block) {
         return Registry.register(Registry.BLOCK, new Identifier(MODID, id), block);
+    }
+
+    private static <T extends BlockEntity>
+    BlockEntityType<T> register(String id,
+                                Supplier<T> supplier,
+                                Block block) {
+        return Registry.register(Registry.BLOCK_ENTITY_TYPE,
+                new Identifier(MODID, id),
+                BlockEntityType.Builder.create(supplier, block)
+                        .build(null));
     }
 }

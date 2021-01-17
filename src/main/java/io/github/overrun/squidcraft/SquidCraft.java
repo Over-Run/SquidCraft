@@ -1,6 +1,7 @@
 package io.github.overrun.squidcraft;
 
 import io.github.overrun.squidcraft.block.Blocks;
+import io.github.overrun.squidcraft.cmd.Commands;
 import io.github.overrun.squidcraft.config.Configs;
 import io.github.overrun.squidcraft.item.Items;
 import net.fabricmc.api.ModInitializer;
@@ -34,6 +35,7 @@ public final class SquidCraft implements ModInitializer {
         Configs.init();
         registerGameObj();
         registerEvents();
+        Configs.init();
     }
 
     private void registerGameObj() {
@@ -47,7 +49,6 @@ public final class SquidCraft implements ModInitializer {
 
     private void registerEvents() {
         LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, builder, setter) -> {
-            if (id.getPath().contains("entities")) {logger.debug(id);}
             if (SQUID_LOOT_TABLE_ID.equals(id)) {
                 builder.withPool(FabricLootPoolBuilder.builder()
                         .rolls(ConstantLootTableRange.create(1))
@@ -66,5 +67,6 @@ public final class SquidCraft implements ModInitializer {
                 );
             }
         });
+        Commands.register();
     }
 }

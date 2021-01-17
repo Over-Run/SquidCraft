@@ -21,7 +21,6 @@
   "item.squidcraft.shredded_squid": "鱿鱼丝",
   "item.squidcraft.cooked_shredded_squid": "熟鱿鱼丝",
   "item.squidcraft.squid_cookie": "鱿鱼饼",
-  "item.squidcraft.xmas_hat": "圣诞帽",
   "item.squidcraft.squid_helmet": "鱿鱼头盔",
   "item.squidcraft.squid_chestplate": "鱿鱼胸甲",
   "item.squidcraft.squid_leggings": "鱿鱼护腿",
@@ -31,11 +30,16 @@
   "item.squidcraft.squid_pickaxe": "鱿鱼镐",
   "item.squidcraft.squid_shovel": "鱿鱼锹",
   "item.squidcraft.squid_sword": "鱿鱼剑",
+  "item.squidcraft.xmas_hat": "圣诞帽",
+  "item.squidcraft.miner_hat": "矿工帽",
+  "item.squidcraft.iron_plate": "铁盘",
+  "item.squidcraft.sizzling_squid": "铁板鱿鱼",
 
   "block.squidcraft.soul_jack_o_lantern": "灵魂南瓜灯",
   "block.squidcraft.squid_block": "鱿鱼块",
   "block.squidcraft.compress_squid_block": "压缩鱿鱼块",
   "block.squidcraft.compressor_block": "压缩机",
+  "block.squidcraft.bin_block": "垃圾桶",
 
   "block.squidcraft.vertical_oak_slab": "竖橡木台阶",
   "block.squidcraft.vertical_spruce_slab": "竖云杉木台阶",
@@ -78,6 +82,14 @@
   "block.squidcraft.vertical_polished_blackstone_slab": "竖磨制黑石台阶",
   "block.squidcraft.vertical_polished_blackstone_brick_slab": "竖磨制黑石砖台阶",
 
+  "commands.squidcraft.config.add": "已添加配置“%s”。",
+  "commands.squidcraft.config.add.restart": "当完成所有变更时，请重启或使用“/squidcraft config reload”命令。",
+
   "itemGroup.squidcraft.squidcraft": "鱿鱼工艺",
-  "itemGroup.squidcraft.misc": "鱿鱼工艺 杂项"
+  "itemGroup.squidcraft.misc": "鱿鱼工艺 杂项",
+
+  "text.squidcraft.hun": "饥饿值：%d",
+  "text.squidcraft.reloadConfig": "重载配置",
+  "text.squidcraft.sat": "饱食度：%d",
+  "text.squidcraft.dispose": "将在关闭时摧毁所有物品"
 }

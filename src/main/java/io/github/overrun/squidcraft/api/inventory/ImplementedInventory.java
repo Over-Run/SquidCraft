@@ -1,4 +1,4 @@
-package io.github.overrun.squidcraft.inventory;
+package io.github.overrun.squidcraft.api.inventory;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventories;

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "squidcraft:cooked_shredded_squid" },
+    { "item": "squidcraft:cooked_shredded_squid" },
+    { "item": "squidcraft:cooked_shredded_squid" },
+    { "item": "squidcraft:cooked_shredded_squid" },
+    { "item": "squidcraft:iron_plate" }
+  ],
+  "result": { "item": "squidcraft:sizzling_squid" }
+}

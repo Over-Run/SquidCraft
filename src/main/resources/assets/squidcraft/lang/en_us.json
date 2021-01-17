@@ -21,7 +21,6 @@
   "item.squidcraft.shredded_squid": "Shredded Squid",
   "item.squidcraft.cooked_shredded_squid": "Cooked Shredded Squid",
   "item.squidcraft.squid_cookie": "Squid Cookie",
-  "item.squidcraft.xmas_hat": "Christmas Hat",
   "item.squidcraft.squid_helmet": "Squid Helmet",
   "item.squidcraft.squid_chestplate": "Squid Chestplate",
   "item.squidcraft.squid_leggings": "Squid Leggings",
@@ -31,11 +30,16 @@
   "item.squidcraft.squid_pickaxe": "Squid Pickaxe",
   "item.squidcraft.squid_shovel": "Squid Shovel",
   "item.squidcraft.squid_sword": "Squid Sword",
+  "item.squidcraft.xmas_hat": "Christmas Hat",
+  "item.squidcraft.miner_hat": "Miner Hat",
+  "item.squidcraft.iron_plate": "Iron Plate",
+  "item.squidcraft.sizzling_squid": "Teppanyaki of Squid",
 
   "block.squidcraft.soul_jack_o_lantern": "Soul Jack o'Lantern",
   "block.squidcraft.squid_block": "Squid Block",
   "block.squidcraft.compress_squid_block": "Compress Squid Block",
   "block.squidcraft.compressor_block": "Compressor",
+  "block.squidcraft.bin_block": "Bin",
 
   "block.squidcraft.vertical_oak_slab": "Vertical Oak Slab",
   "block.squidcraft.vertical_spruce_slab": "Vertical Spruce Slab",
@@ -78,6 +82,14 @@
   "block.squidcraft.vertical_polished_blackstone_slab": "Vertical Polished Blackstone Slab",
   "block.squidcraft.vertical_polished_blackstone_brick_slab": "Vertical Polished Blackstone Brick Slab",
 
+  "commands.squidcraft.config.add": "Added config \"%s\".",
+  "commands.squidcraft.config.add.restart": "Please restart game or use command \"/squidcraft config reload\" when added all configs.",
+
   "itemGroup.squidcraft.squidcraft": "SquidCraft",
-  "itemGroup.squidcraft.misc": "Squidcraft Miscellaneous"
+  "itemGroup.squidcraft.misc": "Squidcraft Miscellaneous",
+
+  "text.squidcraft.hun": "Hunger: %d",
+  "text.squidcraft.reloadConfig": "Reload Configs",
+  "text.squidcraft.sat": "Saturation: %d",
+  "text.squidcraft.dispose": "Will dispose all items on close"
 }

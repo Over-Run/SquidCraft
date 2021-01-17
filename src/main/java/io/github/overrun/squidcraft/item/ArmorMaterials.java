@@ -30,6 +30,13 @@ public final class ArmorMaterials {
             .equipSound(SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND)
             .repairIngredient(Ingredient.ofItems(Items.SQUID_COOKIE))
             .build();
+    public static final ArmorMaterial MINER = ArmorMaterials.of("miner")
+            .durabilityMultiplier(134217727)
+            .protectionAmounts(new int[]{2, 5, 3, 1})
+            .enchantability(10)
+            .equipSound(SoundEvents.ITEM_ARMOR_EQUIP_GOLD)
+            .repairIngredient(Ingredient.ofItems(net.minecraft.item.Items.GOLD_INGOT))
+            .build();
 
     private final String name;
     private int durability;

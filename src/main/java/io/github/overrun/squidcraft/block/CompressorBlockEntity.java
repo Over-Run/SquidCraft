@@ -1,6 +1,6 @@
 package io.github.overrun.squidcraft.block;
 
-import io.github.overrun.squidcraft.inventory.ImplementedInventory;
+import io.github.overrun.squidcraft.api.inventory.ImplementedInventory;
 import io.github.overrun.squidcraft.screen.CompressorScreenHandler;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -23,6 +23,8 @@ import org.jetbrains.annotations.Nullable;
  * @since 2020/12/27
  */
 public class CompressorBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory, SidedInventory {
+    private static final int[] BOTTOM_SLOT = {1};
+    private static final int[] TOP_SIDE_SLOT = {0};
     private DefaultedList<ItemStack> inventory = DefaultedList.ofSize(2, ItemStack.EMPTY);
 
     public CompressorBlockEntity() {
@@ -61,7 +63,7 @@ public class CompressorBlockEntity extends BlockEntity implements NamedScreenHan
 
     @Override
     public int[] getAvailableSlots(Direction side) {
-        return side == Direction.DOWN ? new int[]{1} : new int[]{0};
+        return side == Direction.DOWN ? BOTTOM_SLOT : TOP_SIDE_SLOT;
     }
 
     @Override
