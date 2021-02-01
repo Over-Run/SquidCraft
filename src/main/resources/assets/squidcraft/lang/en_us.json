@@ -1,22 +1,18 @@
 {
   "advancements.squidcraft.root.title": "SquidCraft",
   "advancements.squidcraft.root.desc": "Thanks for playing!",
-  "advancements.squidcraft.shredded_squid.title": "Shredded Squid",
   "advancements.squidcraft.shredded_squid.desc": "The starting item, cook it",
-  "advancements.squidcraft.cooked_shredded_squid.title": "Cooked Shredded Squid",
-  "advancements.squidcraft.cooked_shredded_squid.desc": "Craft a Cookie!",
-  "advancements.squidcraft.squid_cookie.title": "Squid Cookie",
-  "advancements.squidcraft.squid_cookie.desc": "Craft a Block!",
+  "advancements.squidcraft.cooked_shredded_squid.desc": "Craft a cookie!",
+  "advancements.squidcraft.squid_cookie.desc": "Craft a block!",
   "advancements.squidcraft.squid_armors.title": "Squid Armors",
-  "advancements.squidcraft.squid_armors.desc": "Got the Squid Armors",
+  "advancements.squidcraft.squid_armors.desc": "Got the squid armors",
   "advancements.squidcraft.squid_tools.title": "Squid Tools",
-  "advancements.squidcraft.squid_tools.desc": "Got the Squid Tools (Axe, Hoe, Pickaxe, Shovel, Sword)",
-  "advancements.squidcraft.squid_block.title": "Squid Block",
+  "advancements.squidcraft.squid_tools.desc": "Got the squid tools (Axe, Hoe, Pickaxe, Shovel, Sword)",
   "advancements.squidcraft.squid_block.desc": "Try to build a house or compress it!",
-  "advancements.squidcraft.compressor_block.title": "Compressor",
-  "advancements.squidcraft.compressor_block.desc": "The First Machine in SquidCraft",
-  "advancements.squidcraft.compress_squid_block.title": "Compress Squid Block",
-  "advancements.squidcraft.compress_squid_block.desc": "Compressed a Squid Block",
+  "advancements.squidcraft.compressor_block.desc": "The first machine in SquidCraft",
+  "advancements.squidcraft.compression_squid_block.desc": "Compressed a Squid Block",
+  "advancements.squidcraft.iron_plate.desc": "Take some squid",
+  "advancements.squidcraft.sizzling_squid.desc": "Yum!",
 
   "item.squidcraft.shredded_squid": "Shredded Squid",
   "item.squidcraft.cooked_shredded_squid": "Cooked Shredded Squid",
@@ -33,13 +29,12 @@
   "item.squidcraft.xmas_hat": "Christmas Hat",
   "item.squidcraft.miner_hat": "Miner Hat",
   "item.squidcraft.iron_plate": "Iron Plate",
-  "item.squidcraft.sizzling_squid": "Teppanyaki of Squid",
+  "item.squidcraft.sizzling_squid": "Sizzling Squid",
 
   "block.squidcraft.soul_jack_o_lantern": "Soul Jack o'Lantern",
   "block.squidcraft.squid_block": "Squid Block",
-  "block.squidcraft.compress_squid_block": "Compress Squid Block",
+  "block.squidcraft.compression_squid_block": "Compression Squid Block",
   "block.squidcraft.compressor_block": "Compressor",
-  "block.squidcraft.bin_block": "Bin",
 
   "block.squidcraft.vertical_oak_slab": "Vertical Oak Slab",
   "block.squidcraft.vertical_spruce_slab": "Vertical Spruce Slab",
@@ -91,5 +86,5 @@
   "text.squidcraft.hun": "Hunger: %d",
   "text.squidcraft.reloadConfig": "Reload Configs",
   "text.squidcraft.sat": "Saturation: %d",
-  "text.squidcraft.dispose": "Will dispose all items on close"
+  "text.squidcraft.shift": "Press Shift key to see more info"
 }

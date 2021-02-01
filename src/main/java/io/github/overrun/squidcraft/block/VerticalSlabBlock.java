@@ -39,6 +39,7 @@ public class VerticalSlabBlock extends HorizontalFacingBlock implements Waterlog
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
+        super.appendProperties(stateManager);
         stateManager.add(HORIZONTAL_FACING, WATERLOGGED);
     }
 

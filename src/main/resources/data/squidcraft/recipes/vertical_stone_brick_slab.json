@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "group": "vertical_slab",
   "pattern": [
     "A",
     "A",

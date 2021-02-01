@@ -4,6 +4,7 @@
   "package": "io.github.overrun.squidcraft.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "ItemMixin",
     "PlayerEntityMixin"
   ],
   "client": [

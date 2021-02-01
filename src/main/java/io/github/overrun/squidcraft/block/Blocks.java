@@ -29,7 +29,7 @@ public final class Blocks {
             new CarvedPumpkinBlock(copy(JACK_O_LANTERN)) {});
 
     public static final Block SQUID_BLOCK = register("squid_block", new Block(of(FOOD)));
-    public static final Block COMPRESS_SQUID_BLOCK = register("compress_squid_block", new Block(of(FOOD).strength(0.1f)));
+    public static final Block COMPRESSION_SQUID_BLOCK = register("compression_squid_block", new Block(of(FOOD).strength(0.1f)));
 
     // Vertical slab blocks
 
@@ -75,11 +75,8 @@ public final class Blocks {
     public static final Block VERTICAL_POLISHED_BLACKSTONE_BRICK_SLAB = registerVsb("polished_blackstone_brick", POLISHED_BLACKSTONE_BRICK_SLAB);
 
     public static final Block COMPRESSOR_BLOCK = register("compressor_block", new CompressorBlock(copy(IRON_BLOCK)));
-    public static final Block BIN_BLOCK = register("bin_block", new BinBlock(copy(IRON_BLOCK)));
     public static final BlockEntityType<CompressorBlockEntity> COMPRESSOR_BLOCK_ENTITY =
             register("compressor_block", CompressorBlockEntity::new, COMPRESSOR_BLOCK);
-    public static final BlockEntityType<BinBlockEntity> BIN_BLOCK_ENTITY =
-            register("bin_block", BinBlockEntity::new, BIN_BLOCK);
 
     private static Block registerVsb(String type, AbstractBlock block) {
         return register("vertical_" + type + "_slab", new VerticalSlabBlock(copy(block)));

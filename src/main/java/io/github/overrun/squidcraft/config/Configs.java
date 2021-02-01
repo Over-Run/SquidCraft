@@ -37,7 +37,7 @@ public final class Configs {
         if (!cfg.exists()) {
             if (cfg.mkdirs()) {
                 try (Writer w = new FileWriter(cfgF)) {
-                    CONFIG.put("compress+squidcraft:squid_block+9", "squidcraft:compress_squid_block+1");
+                    CONFIG.put("compress+squidcraft:squid_block+9", "squidcraft:compression_squid_block+1");
                     CONFIG.store(w, null);
                 } catch (IOException e) {
                     logger.error("Can't write configs to local!", e);
@@ -51,6 +51,11 @@ public final class Configs {
             logger.error("Can't read configs!", e);
             return FAILED;
         }
+        logger.info("Loaded all configs");
+        return SUCCESS;
+    }
+
+    public static void loadRecipes() {
         logger.info("Reading compressor recipes");
         for (Map.Entry<Object, Object> entry : CONFIG.entrySet()) {
             String k = entry.getKey().toString();
@@ -60,12 +65,14 @@ public final class Configs {
                 try {
                     itemI = Registry.ITEM.get(new Identifier(i[1]));
                 } catch (Throwable t) {
+                    printRecipeError(t);
                     itemI = Items.AIR;
                 }
                 int amountI;
                 try {
                     amountI = i.length > 2 ? Integer.parseInt(i[2]) : 1;
                 } catch (Throwable t) {
+                    printRecipeError(t);
                     amountI = 1;
                 }
                 String[] o = entry.getValue().toString().split("\\+");
@@ -73,19 +80,20 @@ public final class Configs {
                 try {
                     itemO = Registry.ITEM.get(new Identifier(o[0]));
                 } catch (Throwable t) {
+                    printRecipeError(t);
                     itemO = Items.AIR;
                 }
                 int amountO;
                 try {
                     amountO = o.length > 1 ? Integer.parseInt(o[1]) : 1;
                 } catch (Throwable t) {
+                    printRecipeError(t);
                     amountO = 1;
                 }
                 COMPRESSOR_RECIPES.put(new ItemStack(itemI, amountI), new ItemStack(itemO, amountO));
+                logger.info("Added compressor recipe: \"{}={}\"", String.valueOf(entry.getKey()), String.valueOf(entry.getValue()));
             }
         }
-        logger.info("Loaded all configs");
-        return SUCCESS;
     }
 
     public static void store() {
@@ -94,5 +102,10 @@ public final class Configs {
         } catch (IOException e) {
             logger.error("Can't write configs to local!", e);
         }
+    }
+
+    private static void printRecipeError(Throwable t) {
+        logger.error("Parsing error while loading compressor recipe; skipped");
+        logger.catching(t);
     }
 }

@@ -5,7 +5,7 @@
       "item": "squidcraft:squid_cookie"
     },
     "title": {
-      "translate": "advancements.squidcraft.squid_cookie.title"
+      "translate": "item.squidcraft.squid_cookie"
     },
     "description": {
       "translate": "advancements.squidcraft.squid_cookie.desc"
@@ -31,7 +31,8 @@
       "squidcraft:squid_hoe",
       "squidcraft:squid_pickaxe",
       "squidcraft:squid_shovel",
-      "squidcraft:squid_sword"
+      "squidcraft:squid_sword",
+      "squidcraft:iron_plate"
     ]
   }
 }

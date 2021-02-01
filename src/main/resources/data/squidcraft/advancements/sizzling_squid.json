@@ -1,0 +1,25 @@
+{
+  "parent": "squidcraft:iron_plate",
+  "display": {
+    "icon": {
+      "item": "squidcraft:sizzling_squid"
+    },
+    "title": {
+      "translate": "item.squidcraft.sizzling_squid"
+    },
+    "description": {
+      "translate": "advancements.squidcraft.sizzling_squid.desc"
+    },
+    "frame": "task"
+  },
+  "criteria": {
+    "get_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          { "item": "squidcraft:sizzling_squid" }
+        ]
+      }
+    }
+  }
+}

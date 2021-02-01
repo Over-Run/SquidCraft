@@ -5,7 +5,7 @@
       "item": "squidcraft:shredded_squid"
     },
     "title": {
-      "translate": "advancements.squidcraft.shredded_squid.title"
+      "translate": "item.squidcraft.shredded_squid"
     },
     "description": {
       "translate": "advancements.squidcraft.shredded_squid.desc"

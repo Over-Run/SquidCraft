@@ -16,8 +16,8 @@ import net.minecraft.world.World;
  * @author squid233
  * @since 2021/01/16
  */
-public abstract class GenericBlockWithEntity extends BlockWithEntity {
-    protected GenericBlockWithEntity(Settings settings) {
+public abstract class GeneralBlockWithEntity extends BlockWithEntity {
+    protected GeneralBlockWithEntity(Settings settings) {
         super(settings);
     }
 

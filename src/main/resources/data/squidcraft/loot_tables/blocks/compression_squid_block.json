@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "squidcraft:bin_block"
+          "name": "squidcraft:compression_squid_block"
         }
       ],
       "conditions": [

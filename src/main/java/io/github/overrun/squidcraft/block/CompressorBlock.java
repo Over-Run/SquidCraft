@@ -12,8 +12,8 @@ import org.jetbrains.annotations.Nullable;
  * @author squid233
  * @since 2020/12/27
  */
-public class CompressorBlock extends GenericBlockWithEntity {
-    protected CompressorBlock(Settings settings) {
+public class CompressorBlock extends GeneralBlockWithEntity {
+    public CompressorBlock(Settings settings) {
         super(settings);
     }
 

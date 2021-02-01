@@ -13,5 +13,12 @@
     "background": "squidcraft:textures/gui/advancements/backgrounds/squidcraft.png"
   },
   "criteria": { "tick": { "trigger": "minecraft:tick" } },
-  "rewards": { "experience": 1000 }
+  "rewards": {
+    "experience": 1000,
+    "recipes": [
+      "squidcraft:miner_hat",
+      "squidcraft:soul_jack_o_lantern",
+      "squidcraft:xmas_hat"
+    ]
+  }
 }

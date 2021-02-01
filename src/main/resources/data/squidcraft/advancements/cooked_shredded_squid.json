@@ -5,7 +5,7 @@
       "item": "squidcraft:cooked_shredded_squid"
     },
     "title": {
-      "translate": "advancements.squidcraft.cooked_shredded_squid.title"
+      "translate": "item.squidcraft.cooked_shredded_squid"
     },
     "description": {
       "translate": "advancements.squidcraft.cooked_shredded_squid.desc"

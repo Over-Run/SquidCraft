@@ -5,7 +5,7 @@
       "item": "squidcraft:squid_block"
     },
     "title": {
-      "translate": "advancements.squidcraft.squid_block.title"
+      "translate": "block.squidcraft.squid_block"
     },
     "description": {
       "translate": "advancements.squidcraft.squid_block.desc"

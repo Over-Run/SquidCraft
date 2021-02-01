@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["A"],
+  "key": { "A": { "item": "squidcraft:squid_cookie" } },
+  "result": {
+    "item": "squidcraft:cooked_shredded_squid",
+    "count": 4
+  }
+}

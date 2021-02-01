@@ -1,0 +1,25 @@
+{
+  "parent": "squidcraft:squid_cookie",
+  "display": {
+    "icon": {
+      "item": "squidcraft:iron_plate"
+    },
+    "title": {
+      "translate": "item.squidcraft.iron_plate"
+    },
+    "description": {
+      "translate": "advancements.squidcraft.iron_plate.desc"
+    },
+    "frame": "task"
+  },
+  "criteria": {
+    "get_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          { "item": "squidcraft:iron_plate" }
+        ]
+      }
+    }
+  }
+}

@@ -1,22 +1,18 @@
 {
   "advancements.squidcraft.root.title": "魷魚工藝",
   "advancements.squidcraft.root.desc": "感謝遊玩！",
-  "advancements.squidcraft.shredded_squid.title": "魷魚絲",
   "advancements.squidcraft.shredded_squid.desc": "模組的基本物品，烤它",
-  "advancements.squidcraft.cooked_shredded_squid.title": "熟魷魚絲",
   "advancements.squidcraft.cooked_shredded_squid.desc": "合成一塊餅！",
-  "advancements.squidcraft.squid_cookie.title": "魷魚餅",
   "advancements.squidcraft.squid_cookie.desc": "合成一個方塊！",
   "advancements.squidcraft.squid_armors.title": "魷魚盔甲",
   "advancements.squidcraft.squid_armors.desc": "集齊魷魚盔甲",
   "advancements.squidcraft.squid_tools.title": "魷魚工具",
   "advancements.squidcraft.squid_tools.desc": "集齊魷魚工具（包括斧鋤鎬鍬劍）",
-  "advancements.squidcraft.squid_block.title": "魷魚塊",
   "advancements.squidcraft.squid_block.desc": "嘗試建房子或壓縮它！",
-  "advancements.squidcraft.compressor_block.title": "壓縮機",
   "advancements.squidcraft.compressor_block.desc": "魷魚工藝中的第一台機器",
-  "advancements.squidcraft.compress_squid_block.title": "壓縮魷魚塊",
-  "advancements.squidcraft.compress_squid_block.desc": "成功壓縮了一個魷魚塊",
+  "advancements.squidcraft.compression_squid_block.desc": "成功壓縮了一個魷魚塊",
+  "advancements.squidcraft.iron_plate.desc": "裝幾隻魷魚",
+  "advancements.squidcraft.sizzling_squid.desc": "真香！",
 
   "item.squidcraft.shredded_squid": "魷魚絲",
   "item.squidcraft.cooked_shredded_squid": "熟魷魚絲",
@@ -37,9 +33,8 @@
 
   "block.squidcraft.soul_jack_o_lantern": "靈魂南瓜燈",
   "block.squidcraft.squid_block": "魷魚塊",
-  "block.squidcraft.compress_squid_block": "壓縮魷魚塊",
+  "block.squidcraft.compression_squid_block": "壓縮魷魚塊",
   "block.squidcraft.compressor_block": "壓縮機",
-  "block.squidcraft.bin_block": "垃圾桶",
 
   "block.squidcraft.vertical_oak_slab": "竖橡木半磚",
   "block.squidcraft.vertical_spruce_slab": "竖杉木半磚",
@@ -91,5 +86,5 @@
   "text.squidcraft.hun": "飢餓值：%d",
   "text.squidcraft.reloadConfig": "重載配置",
   "text.squidcraft.sat": "飽食度：%d",
-  "text.squidcraft.dispose": "將在關閉時摧毀所有物品"
+  "text.squidcraft.shift": "按下Shift以查看詳細信息"
 }

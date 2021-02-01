@@ -1,7 +1,6 @@
 package io.github.overrun.squidcraft.client;
 
 import io.github.overrun.squidcraft.block.Blocks;
-import io.github.overrun.squidcraft.screen.BinScreen;
 import io.github.overrun.squidcraft.screen.CompressorScreen;
 import io.github.overrun.squidcraft.screen.ScreenHandlers;
 import net.fabricmc.api.ClientModInitializer;
@@ -18,7 +17,5 @@ public class SquidCraftClient implements ClientModInitializer {
     public void onInitializeClient() {
         ScreenRegistry.register(ScreenHandlers.COMPRESSOR_SCREEN_HANDLER, CompressorScreen::new);
         BlockRenderLayerMap.INSTANCE.putBlock(Blocks.COMPRESSOR_BLOCK, RenderLayer.getCutout());
-        ScreenRegistry.register(ScreenHandlers.BIN_SCREEN_HANDLER, BinScreen::new);
-        BlockRenderLayerMap.INSTANCE.putBlock(Blocks.BIN_BLOCK, RenderLayer.getCutout());
     }
 }

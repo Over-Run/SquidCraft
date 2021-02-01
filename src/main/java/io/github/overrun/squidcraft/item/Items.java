@@ -19,7 +19,6 @@ import net.minecraft.util.registry.Registry;
 
 import static io.github.overrun.squidcraft.SquidCraft.MODID;
 import static io.github.overrun.squidcraft.item.ItemGroups.MISC;
-import static io.github.overrun.squidcraft.item.ItemGroups.SQUIDCRAFT;
 
 /**
  * @author squid233
@@ -34,7 +33,7 @@ public final class Items {
     public static final Item SQUID_COOKIE = createBigMeat(20, 1)
             .build("squid_cookie", getDefault());
     public static final Item IRON_PLATE = register("iron_plate", getDefault());
-    public static final Item SIZZLING_SQUID = createBigMeat(21, 2)
+    public static final Item SIZZLING_SQUID = createBigMeat(30, 2)
             .onFinishUsing((stack, world, user) -> {
                 if (user instanceof PlayerEntity) {
                     ((PlayerEntity) user).giveItemStack(new ItemStack(IRON_PLATE));
@@ -60,7 +59,7 @@ public final class Items {
 
     public static final Item SOUL_JACK_O_LANTERN = register(Blocks.SOUL_JACK_O_LANTERN, getMisc());
     public static final Item SQUID_BLOCK = createBlockMeat(50, 1.4f, Blocks.SQUID_BLOCK, getDefault());
-    public static final Item COMPRESS_SQUID_BLOCK = createBlockMeat(70, 2.5f, Blocks.COMPRESS_SQUID_BLOCK, getDefault());
+    public static final Item COMPRESSION_SQUID_BLOCK = createBlockMeat(70, 2.5f, Blocks.COMPRESSION_SQUID_BLOCK, getDefault());
 
     public static final Item VERTICAL_OAK_SLAB = vtcSlbItm(Blocks.VERTICAL_OAK_SLAB);
     public static final Item VERTICAL_SPRUCE_SLAB = vtcSlbItm(Blocks.VERTICAL_SPRUCE_SLAB);
@@ -104,7 +103,6 @@ public final class Items {
     public static final Item VERTICAL_POLISHED_BLACKSTONE_BRICK_SLAB = vtcSlbItm(Blocks.VERTICAL_POLISHED_BLACKSTONE_BRICK_SLAB);
 
     public static final Item COMPRESSOR_BLOCK = register(Blocks.COMPRESSOR_BLOCK, getDefault());
-    public static final Item BIN_BLOCK = register(Blocks.BIN_BLOCK, getMisc());
 
     // Block Items End
 
@@ -146,10 +144,10 @@ public final class Items {
     }
 
     private static Item.Settings getDefault() {
-        return new Item.Settings().group(SQUIDCRAFT);
+        return new Item.Settings();
     }
 
     private static Item.Settings getMisc() {
-        return new Item.Settings().group(MISC);
+        return getDefault().group(MISC);
     }
 }

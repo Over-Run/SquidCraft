@@ -35,7 +35,7 @@ public final class SquidCraft implements ModInitializer {
         Configs.init();
         registerGameObj();
         registerEvents();
-        Configs.init();
+        Configs.loadRecipes();
     }
 
     private void registerGameObj() {

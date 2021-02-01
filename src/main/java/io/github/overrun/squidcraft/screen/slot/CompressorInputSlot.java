@@ -5,6 +5,7 @@ import io.github.overrun.squidcraft.screen.CompressorScreenHandler;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.screen.slot.Slot;
 
 import java.util.Map;
@@ -33,18 +34,20 @@ public class CompressorInputSlot extends Slot {
                 if (getStack().getItem() == itemI
                         && getStack().getCount() >= amountI) {
                     Item itemO = entry.getValue().getItem();
-                    int amountO = entry.getValue().getCount();
-                    if (!slot.hasStack()) {
-                        getStack().decrement(amountI);
-                        slot.setStack(new ItemStack(itemO, amountO));
-                        markDirty();
-                        break;
-                    } else if (stack.getItem() == itemO
-                            && stack.getCount() + amountO <= stack.getMaxCount()) {
-                        getStack().decrement(amountI);
-                        stack.increment(amountO);
-                        markDirty();
-                        break;
+                    if (itemO != Items.AIR) {
+                        int amountO = entry.getValue().getCount();
+                        if (!slot.hasStack()) {
+                            getStack().decrement(amountI);
+                            slot.setStack(new ItemStack(itemO, amountO));
+                            markDirty();
+                            break;
+                        } else if (stack.getItem() == itemO
+                                && stack.getCount() + amountO <= stack.getMaxCount()) {
+                            getStack().decrement(amountI);
+                            stack.increment(amountO);
+                            markDirty();
+                            break;
+                        }
                     }
                 }
             }
