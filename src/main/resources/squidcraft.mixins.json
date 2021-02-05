@@ -4,11 +4,12 @@
   "package": "io.github.overrun.squidcraft.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "ItemMixin",
+    "FluidBlockMixin",
     "PlayerEntityMixin"
   ],
   "client": [
-    "SquidCraftMixin"
+    "AdvancementTabMixin",
+    "ItemMixin"
   ],
   "injectors": {
     "defaultRequire": 1 }

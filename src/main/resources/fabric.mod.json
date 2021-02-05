@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "squidcraft",
-  "version": "0.10.1",
+  "version": "0.11.0",
 
   "name": "SquidCraft",
   "description": "This mod adds more food of squid!",
@@ -27,9 +27,22 @@
   "depends": {
     "fabricloader": ">=0.10.0",
     "fabric": ">=0.21.0",
-    "minecraft": "1.16.x"
+    "minecraft": ">=1.16-"
   },
   "suggests": {
     "modmenu": "*"
+  },
+
+  "custom": {
+    "modupdater": {
+      "strategy": "curseforge",
+      "projectID": 381843,
+      "strict": false
+    },
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/yDrFqRU"
+      }
+    }
   }
 }

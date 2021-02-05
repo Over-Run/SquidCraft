@@ -1,5 +1,7 @@
 package io.github.overrun.squidcraft.mixin;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
@@ -20,7 +22,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.List;
 
 import static org.lwjgl.glfw.GLFW.*;
-import static org.lwjgl.glfw.GLFW.GLFW_PRESS;
 
 /**
  * @author squid233
@@ -33,14 +34,21 @@ public abstract class ItemMixin implements ItemConvertible {
     @Shadow
     public abstract FoodComponent getFoodComponent();
 
+    @Environment(EnvType.CLIENT)
     @Inject(method = "appendTooltip", at = @At("RETURN"))
     public void appendTooltip(ItemStack stack,
                               @Nullable World world,
                               List<Text> tooltip,
                               TooltipContext context,
                               CallbackInfo ci) {
-        boolean shiftDown = glfwGetKey(glfwGetCurrentContext(), GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS
-                || glfwGetKey(glfwGetCurrentContext(), GLFW_KEY_RIGHT_SHIFT) == GLFW_PRESS;
+        boolean shiftDown =
+        /*  Here likes this below:
+            glfwGetKey(glfwGetCurrentContext(), GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS
+            || glfwGetKey(glfwGetCurrentContext(), GLFW_KEY_RIGHT_SHIFT) == GLFW_PRESS; */
+                (
+                        glfwGetKey(glfwGetCurrentContext(), GLFW_KEY_LEFT_SHIFT)
+                        | glfwGetKey(glfwGetCurrentContext(), GLFW_KEY_RIGHT_SHIFT)
+                ) == GLFW_PRESS;
         if (isFood() && getFoodComponent() != null) {
             Style style = Style.EMPTY.withColor(Formatting.GRAY);
             if (shiftDown) {

@@ -1,6 +1,7 @@
-package io.github.overrun.squidcraft.block;
+package io.github.overrun.squidcraft.block.entity;
 
 import io.github.overrun.squidcraft.api.inventory.ImplementedInventory;
+import io.github.overrun.squidcraft.block.Blocks;
 import io.github.overrun.squidcraft.screen.CompressorScreenHandler;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;

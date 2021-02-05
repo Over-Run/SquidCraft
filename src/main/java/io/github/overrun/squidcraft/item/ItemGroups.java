@@ -18,7 +18,7 @@ import static net.minecraft.item.Items.SQUID_SPAWN_EGG;
  */
 public final class ItemGroups {
     @SuppressWarnings("unused")
-    public static final ItemGroup SQUIDCRAFT = FabricItemGroupBuilder.create(new Identifier("squidcraft:squidcraft"))
+    public static final ItemGroup SQUIDCRAFT = FabricItemGroupBuilder.create(new Identifier(MODID, "squidcraft"))
             .icon(() -> new ItemStack(SQUID_COOKIE))
             .appendItems(stacks -> addAll(stacks, SQUID_SPAWN_EGG,
                     SHREDDED_SQUID, COOKED_SHREDDED_SQUID, SQUID_COOKIE,
@@ -27,15 +27,12 @@ public final class ItemGroups {
                     SQUID_AXE, SQUID_HOE, SQUID_PICKAXE, SQUID_SHOVEL, SQUID_SWORD,
                     SQUID_BLOCK, COMPRESSOR_BLOCK, COMPRESSION_SQUID_BLOCK))
             .build();
-    public static final ItemGroup MISC = build(MODID, "misc", SOUL_JACK_O_LANTERN);
+    public static final ItemGroup MISC = FabricItemGroupBuilder.build(new Identifier(MODID, "misc"),
+            () -> new ItemStack(SOUL_JACK_O_LANTERN));
 
     public static void addAll(List<ItemStack> stacks, Item... items) {
         for (Item item : items) {
             stacks.add(new ItemStack(item));
         }
-    }
-
-    public static ItemGroup build(String modid, String name, Item icon) {
-        return FabricItemGroupBuilder.build(new Identifier(modid, name), () -> new ItemStack(icon));
     }
 }

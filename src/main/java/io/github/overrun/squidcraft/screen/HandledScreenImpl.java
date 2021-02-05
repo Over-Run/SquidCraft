@@ -21,6 +21,7 @@ public class HandledScreenImpl<T extends ScreenHandler> extends HandledScreen<T>
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     protected void drawBackground(MatrixStack matrices, float delta, int mouseX, int mouseY) {
         RenderSystem.color4f(1.0f, 1.0f, 1.0f, 1.0f);
         client.getTextureManager().bindTexture(texture);

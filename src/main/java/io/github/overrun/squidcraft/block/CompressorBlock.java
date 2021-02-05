@@ -1,5 +1,7 @@
 package io.github.overrun.squidcraft.block;
 
+import io.github.overrun.squidcraft.block.entity.CompressorBlockEntity;
+import io.github.overrun.squidcraft.block.entity.GeneralBlockWithEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.util.ItemScatterer;

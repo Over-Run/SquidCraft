@@ -1,5 +1,6 @@
 package io.github.overrun.squidcraft.block;
 
+import io.github.overrun.squidcraft.block.entity.CompressorBlockEntity;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.CarvedPumpkinBlock;
@@ -7,6 +8,7 @@ import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -28,8 +30,8 @@ public final class Blocks {
             "soul_jack_o_lantern",
             new CarvedPumpkinBlock(copy(JACK_O_LANTERN)) {});
 
-    public static final Block SQUID_BLOCK = register("squid_block", new Block(of(FOOD)));
-    public static final Block COMPRESSION_SQUID_BLOCK = register("compression_squid_block", new Block(of(FOOD).strength(0.1f)));
+    public static final Block SQUID_BLOCK = register("squid_block", new Block(of(FOOD).sounds(BlockSoundGroup.SLIME)));
+    public static final Block COMPRESSION_SQUID_BLOCK = register("compression_squid_block", new Block(of(FOOD).strength(0.1f).sounds(BlockSoundGroup.SLIME)));
 
     // Vertical slab blocks
 

@@ -1,10 +1,7 @@
 package io.github.overrun.squidcraft.config;
 
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.io.File;
 import java.io.FileReader;
@@ -12,9 +9,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
 
 import static io.github.overrun.squidcraft.SquidCraft.logger;
 
@@ -23,89 +17,74 @@ import static io.github.overrun.squidcraft.SquidCraft.logger;
  * @since 2020/12/27
  */
 public final class Configs {
-    public static final Properties CONFIG = new Properties(
-            /* IMPORTANT: DON'T PUT IN NUMBER - WON'T COMPILE */
-    );
-    public static final Map<ItemStack, ItemStack> COMPRESSOR_RECIPES = new HashMap<>(16);
+    private static final Gson GSON = new GsonBuilder()
+            .setPrettyPrinting()
+            .disableHtmlEscaping()
+            .registerTypeAdapter(Configurator.class, new Configurator.Serializer())
+            .create();
+    private static Configurator configurator = new Configurator(new CobblestoneFarmRoll[0], new CompressorRecipe[0]);
     public static final boolean FAILED = false;
     public static final boolean SUCCESS = true;
 
     public static boolean init() {
         logger.info("Loading configs!");
         File cfg = new File("config/squidcraft");
-        File cfgF = new File("config/squidcraft/config.properties");
+        File cfgF = new File("config/squidcraft/config.json");
         if (!cfg.exists()) {
             if (cfg.mkdirs()) {
                 try (Writer w = new FileWriter(cfgF)) {
-                    CONFIG.put("compress+squidcraft:squid_block+9", "squidcraft:compression_squid_block+1");
-                    CONFIG.store(w, null);
+                    w.write(GSON.toJson(configurator = new Configurator(
+                            new CobblestoneFarmRoll[]{
+                                    new CobblestoneFarmRoll("obsidian", 1),
+                                    new CobblestoneFarmRoll("ancient_debris", 2),
+                                    new CobblestoneFarmRoll("diamond_ore", 3),
+                                    new CobblestoneFarmRoll("emerald_ore", 4),
+                                    new CobblestoneFarmRoll("nether_quartz_ore", 5),
+                                    new CobblestoneFarmRoll("nether_gold_ore", 6),
+                                    new CobblestoneFarmRoll("gold_ore", 7),
+                                    new CobblestoneFarmRoll("redstone_ore", 8),
+                                    new CobblestoneFarmRoll("lapis_ore", 9),
+                                    new CobblestoneFarmRoll("iron_ore", 10),
+                                    new CobblestoneFarmRoll("coal_ore", 11),
+                                    new CobblestoneFarmRoll("stone", 50),
+                                    new CobblestoneFarmRoll("cobblestone", 100)
+                            },
+                            new CompressorRecipe[]{
+                                    new CompressorRecipe(
+                                            new CompressorRecipe.In("squidcraft:squid_block", 9),
+                                            new CompressorRecipe.Out("squidcraft:compression_squid_block")
+                                    )
+                            }
+                    )));
                 } catch (IOException e) {
-                    logger.error("Can't write configs to local!", e);
+                    logger.error("Can't write configs to local!");
+                    logger.catching(e);
                     return FAILED;
                 }
             }
-        }
-        try (Reader r = new FileReader(cfgF)) {
-            CONFIG.load(r);
-        } catch (IOException e) {
-            logger.error("Can't read configs!", e);
-            return FAILED;
+        } else {
+            try (Reader r = new FileReader(cfgF)) {
+                configurator = GSON.fromJson(r, Configurator.class);
+            } catch (IOException e) {
+                logger.error("Can't read configs!");
+                logger.catching(e);
+                return FAILED;
+            }
         }
         logger.info("Loaded all configs");
         return SUCCESS;
     }
 
-    public static void loadRecipes() {
-        logger.info("Reading compressor recipes");
-        for (Map.Entry<Object, Object> entry : CONFIG.entrySet()) {
-            String k = entry.getKey().toString();
-            if (k.startsWith("compress+")) {
-                String[] i = k.split("\\+");
-                Item itemI;
-                try {
-                    itemI = Registry.ITEM.get(new Identifier(i[1]));
-                } catch (Throwable t) {
-                    printRecipeError(t);
-                    itemI = Items.AIR;
-                }
-                int amountI;
-                try {
-                    amountI = i.length > 2 ? Integer.parseInt(i[2]) : 1;
-                } catch (Throwable t) {
-                    printRecipeError(t);
-                    amountI = 1;
-                }
-                String[] o = entry.getValue().toString().split("\\+");
-                Item itemO;
-                try {
-                    itemO = Registry.ITEM.get(new Identifier(o[0]));
-                } catch (Throwable t) {
-                    printRecipeError(t);
-                    itemO = Items.AIR;
-                }
-                int amountO;
-                try {
-                    amountO = o.length > 1 ? Integer.parseInt(o[1]) : 1;
-                } catch (Throwable t) {
-                    printRecipeError(t);
-                    amountO = 1;
-                }
-                COMPRESSOR_RECIPES.put(new ItemStack(itemI, amountI), new ItemStack(itemO, amountO));
-                logger.info("Added compressor recipe: \"{}={}\"", String.valueOf(entry.getKey()), String.valueOf(entry.getValue()));
-            }
-        }
-    }
-
     public static void store() {
-        try (Writer w = new FileWriter("config/squidcraft/config.properties")) {
-            CONFIG.store(w, null);
+        try (Writer w = new FileWriter("config/squidcraft/config.json")) {
+            w.write(GSON.toJson(configurator));
         } catch (IOException e) {
-            logger.error("Can't write configs to local!", e);
+            logger.error("Can't write configs to local!");
+            logger.catching(e);
         }
     }
 
-    private static void printRecipeError(Throwable t) {
-        logger.error("Parsing error while loading compressor recipe; skipped");
-        logger.catching(t);
+    public static Configurator getConfigurator() {
+        return configurator;
     }
 }

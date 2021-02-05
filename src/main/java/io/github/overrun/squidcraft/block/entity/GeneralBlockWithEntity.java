@@ -1,4 +1,4 @@
-package io.github.overrun.squidcraft.block;
+package io.github.overrun.squidcraft.block.entity;
 
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
