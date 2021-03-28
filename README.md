@@ -1,4 +1,8 @@
-# SquidCraft
+# SquidCraft ![GitHub](https://img.shields.io/github/license/Over-Run/SquidCraft)
+
+![SquidCraft Downloads on CurseForge](https://cf.way2muchnoise.eu/full_squidcraft_downloads.svg)
+![Available Versions](https://cf.way2muchnoise.eu/versions/squidcraft.svg)
+![Title](https://cf.way2muchnoise.eu/title/squidcraft.svg)
 
 ![Java CI with Gradle](https://github.com/Over-Run/SquidCraft/workflows/Java%20CI%20with%20Gradle/badge.svg?branch=1.16.x)
 ![discord](https://img.shields.io/discord/699898538112450651)
