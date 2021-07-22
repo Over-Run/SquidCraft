@@ -25,7 +25,7 @@ public final class ItemGroups {
                     IRON_PLATE, SIZZLING_SQUID,
                     SQUID_HELMET, SQUID_CHESTPLATE, SQUID_LEGGINGS, SQUID_BOOTS,
                     SQUID_AXE, SQUID_HOE, SQUID_PICKAXE, SQUID_SHOVEL, SQUID_SWORD,
-                    SQUID_BLOCK, COMPRESSOR_BLOCK, COMPRESSION_SQUID_BLOCK))
+                    SQUID_BLOCK, COMPRESSOR_BLOCK, COMPRESSED_SQUID_BLOCK))
             .build();
     public static final ItemGroup MISC = FabricItemGroupBuilder.build(new Identifier(MODID, "misc"),
             () -> new ItemStack(SOUL_JACK_O_LANTERN));

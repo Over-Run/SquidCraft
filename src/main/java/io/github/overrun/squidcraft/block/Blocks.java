@@ -5,7 +5,7 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.CarvedPumpkinBlock;
 import net.minecraft.block.Material;
-import net.minecraft.block.MaterialColor;
+import net.minecraft.block.MapColor;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.sound.BlockSoundGroup;
@@ -24,14 +24,14 @@ import static net.minecraft.block.Blocks.*;
  * @since 2020/12/19
  */
 public final class Blocks {
-    public static final Material FOOD = new Material.Builder(MaterialColor.WHITE_TERRACOTTA).build();
+    public static final Material FOOD = new Material.Builder(MapColor.TERRACOTTA_WHITE).build();
 
     public static final Block SOUL_JACK_O_LANTERN = register(
             "soul_jack_o_lantern",
             new CarvedPumpkinBlock(copy(JACK_O_LANTERN)) {});
 
     public static final Block SQUID_BLOCK = register("squid_block", new Block(of(FOOD).sounds(BlockSoundGroup.SLIME)));
-    public static final Block COMPRESSION_SQUID_BLOCK = register("compression_squid_block", new Block(of(FOOD).strength(0.1f).sounds(BlockSoundGroup.SLIME)));
+    public static final Block COMPRESSED_SQUID_BLOCK = register("compressed_squid_block", new Block(of(FOOD).strength(0.1f).sounds(BlockSoundGroup.SLIME)));
 
     // Vertical slab blocks
 
@@ -79,6 +79,8 @@ public final class Blocks {
     public static final Block COMPRESSOR_BLOCK = register("compressor_block", new CompressorBlock(copy(IRON_BLOCK)));
     public static final BlockEntityType<CompressorBlockEntity> COMPRESSOR_BLOCK_ENTITY =
             register("compressor_block", CompressorBlockEntity::new, COMPRESSOR_BLOCK);
+
+    public static void load() {}
 
     private static Block registerVsb(String type, AbstractBlock block) {
         return register("vertical_" + type + "_slab", new VerticalSlabBlock(copy(block)));

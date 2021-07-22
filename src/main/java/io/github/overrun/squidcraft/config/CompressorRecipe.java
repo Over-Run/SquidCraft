@@ -3,43 +3,45 @@ package io.github.overrun.squidcraft.config;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 import java.io.IOException;
 import java.util.Objects;
 import java.util.StringJoiner;
+
+import static net.minecraft.util.registry.Registry.ITEM;
 
 /**
  * @author squid233
  * @since 2021/02/02
  */
 public final class CompressorRecipe {
-    private In in;
-    private Out out;
+    private Entry in;
+    private Entry out;
 
-    public CompressorRecipe(In in, Out out) {
+    public CompressorRecipe(Entry in, Entry out) {
         this.in = in;
         this.out = out;
     }
 
     public CompressorRecipe() {
-        this(new In(), new Out());
+        this(new Entry(), new Entry());
     }
 
-    public In getInput() {
+    public Entry getInput() {
         return in;
     }
 
-    public void setInput(In in) {
+    public void setInput(Entry in) {
         this.in = in;
     }
 
-    public Out getOutput() {
+    public Entry getOutput() {
         return out;
     }
 
-    public void setOutput(Out out) {
+    public void setOutput(Entry out) {
         this.out = out;
     }
 
@@ -67,9 +69,9 @@ public final class CompressorRecipe {
     public static final class Serializer {
         public static void write(JsonWriter out, CompressorRecipe value) throws IOException {
             out.beginObject().name("in");
-            CompressorRecipe.In.Serializer.write(out, value.getInput());
+            Entry.Serializer.write(out, value.getInput());
             out.name("out");
-            CompressorRecipe.Out.Serializer.write(out, value.getOutput());
+            Entry.Serializer.write(out, value.getOutput());
             out.endObject();
         }
 
@@ -79,10 +81,10 @@ public final class CompressorRecipe {
             while (in.hasNext()) {
                 switch (in.nextName()) {
                     case "in":
-                        recipe.setInput(CompressorRecipe.In.Serializer.read(in));
+                        recipe.setInput(Entry.Serializer.read(in));
                         break;
                     case "out":
-                        recipe.setOutput(CompressorRecipe.Out.Serializer.read(in));
+                        recipe.setOutput(Entry.Serializer.read(in));
                         break;
                     default:
                 }
@@ -92,20 +94,29 @@ public final class CompressorRecipe {
         }
     }
 
-    public static final class In {
+    public static final class Entry {
         private String item;
         private int count;
 
-        public In(String item, int count) {
+        public Entry(String item, int count) {
             this.item = item;
             this.count = count;
         }
 
-        public In(String item) {
+        public Entry(String item) {
             this(item, 1);
         }
 
-        public In() {
+        public Entry(ItemConvertible item, int count) {
+            this.item = ITEM.getId(item.asItem()).toString();
+            this.count = count;
+        }
+
+        public Entry(ItemConvertible item) {
+            this(item, 1);
+        }
+
+        public Entry() {
             this("air");
         }
 
@@ -114,7 +125,7 @@ public final class CompressorRecipe {
         }
 
         public Item getAsItem() {
-            return Registry.ITEM.get(new Identifier(getItem()));
+            return ITEM.get(new Identifier(getItem()));
         }
 
         public void setItem(String item) {
@@ -133,8 +144,8 @@ public final class CompressorRecipe {
         public boolean equals(Object o) {
             if (this == o) { return true; }
             if (o == null || getClass() != o.getClass()) { return false; }
-            In in = (In) o;
-            return getCount() == in.getCount() && Objects.equals(getItem(), in.getItem());
+            Entry e = (Entry) o;
+            return getCount() == e.getCount() && Objects.equals(getItem(), e.getItem());
         }
 
         @Override
@@ -144,116 +155,33 @@ public final class CompressorRecipe {
 
         @Override
         public String toString() {
-            return new StringJoiner(", ", In.class.getSimpleName() + "[", "]")
+            return new StringJoiner(", ", Entry.class.getSimpleName() + "[", "]")
                     .add("item='" + item + "'")
                     .add("count=" + count)
                     .toString();
         }
 
         public static final class Serializer {
-            public static void write(JsonWriter out, In value) throws IOException {
+            public static void write(JsonWriter out, Entry value) throws IOException {
                 out.beginObject().name("item").value(value.getItem()).name("count").value(value.getCount()).endObject();
             }
 
-            public static In read(JsonReader in) throws IOException {
-                In input = new In();
+            public static Entry read(JsonReader in) throws IOException {
+                Entry e = new Entry();
                 in.beginObject();
                 while (in.hasNext()) {
                     switch (in.nextName()) {
                         case "item":
-                            input.setItem(in.nextString());
+                            e.setItem(in.nextString());
                             break;
                         case "count":
-                            input.setCount(in.nextInt());
+                            e.setCount(in.nextInt());
                             break;
                         default:
                     }
                 }
                 in.endObject();
-                return input;
-            }
-        }
-    }
-
-    public static final class Out {
-        private String item;
-        private int count;
-
-        public Out(String item, int count) {
-            this.item = item;
-            this.count = count;
-        }
-
-        public Out(String item) {
-            this(item, 1);
-        }
-
-        public Out() {
-            this("air");
-        }
-
-        public String getItem() {
-            return item;
-        }
-
-        public Item getAsItem() {
-            return Registry.ITEM.get(new Identifier(getItem()));
-        }
-
-        public void setItem(String item) {
-            this.item = item;
-        }
-
-        public int getCount() {
-            return count;
-        }
-
-        public void setCount(int count) {
-            this.count = count;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) { return true; }
-            if (o == null || getClass() != o.getClass()) { return false; }
-            Out out = (Out) o;
-            return getCount() == out.getCount() && Objects.equals(getItem(), out.getItem());
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(getItem(), getCount());
-        }
-
-        @Override
-        public String toString() {
-            return new StringJoiner(", ", Out.class.getSimpleName() + "[", "]")
-                    .add("item='" + item + "'")
-                    .add("count=" + count)
-                    .toString();
-        }
-
-        public static final class Serializer {
-            public static void write(JsonWriter out, Out value) throws IOException {
-                out.beginObject().name("item").value(value.getItem()).name("count").value(value.getCount()).endObject();
-            }
-
-            public static Out read(JsonReader in) throws IOException {
-                Out out = new Out();
-                in.beginObject();
-                while (in.hasNext()) {
-                    switch (in.nextName()) {
-                        case "item":
-                            out.setItem(in.nextString());
-                            break;
-                        case "count":
-                            out.setCount(in.nextInt());
-                            break;
-                        default:
-                    }
-                }
-                in.endObject();
-                return out;
+                return e;
             }
         }
     }

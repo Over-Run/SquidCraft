@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '0.5-SNAPSHOT'
+    id 'fabric-loom' version '0.7-SNAPSHOT'
     // id 'maven-publish'
 }
 
@@ -11,7 +11,8 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
-    maven { url 'https://crystal.app.lss233.com/repositories/minecraft' }
+    //maven { url 'https://crystal.app.lss233.com/repositories/minecraft' }
+    maven { url 'https://maven.terraformersmc.com/releases' }
 }
 
 dependencies {
@@ -24,7 +25,7 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
     // Mod Menu. For reload the config.
-    modImplementation "io.github.prospector:modmenu:${project.modmenu_version}"
+    modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
 
     // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
     // You may need to force-disable transitiveness on them.

@@ -10,7 +10,7 @@
   "advancements.squidcraft.squid_tools.desc": "Got the squid tools (Axe, Hoe, Pickaxe, Shovel, Sword)",
   "advancements.squidcraft.squid_block.desc": "Try to build a house or compress it!",
   "advancements.squidcraft.compressor_block.desc": "The first machine in SquidCraft",
-  "advancements.squidcraft.compression_squid_block.desc": "Compressed a Squid Block",
+  "advancements.squidcraft.compressed_squid_block.desc": "Compressed a Squid Block",
   "advancements.squidcraft.iron_plate.desc": "Take some squid",
   "advancements.squidcraft.sizzling_squid.desc": "Yum!",
 
@@ -33,7 +33,7 @@
 
   "block.squidcraft.soul_jack_o_lantern": "Soul Jack o'Lantern",
   "block.squidcraft.squid_block": "Block of Squid",
-  "block.squidcraft.compression_squid_block": "Compression Squid Block",
+  "block.squidcraft.compressed_squid_block": "Compressed Squid Block",
   "block.squidcraft.compressor_block": "Compressor",
 
   "block.squidcraft.vertical_oak_slab": "Vertical Oak Slab",

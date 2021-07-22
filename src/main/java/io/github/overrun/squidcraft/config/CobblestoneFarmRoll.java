@@ -4,11 +4,12 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import net.minecraft.block.Block;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 import java.io.IOException;
 import java.util.Objects;
 import java.util.StringJoiner;
+
+import static net.minecraft.util.registry.Registry.BLOCK;
 
 /**
  * @author squid233
@@ -23,6 +24,11 @@ public final class CobblestoneFarmRoll {
         this.percent = percent;
     }
 
+    public CobblestoneFarmRoll(Block block, int percent) {
+        this.block = BLOCK.getId(block).toString();
+        this.percent = percent;
+    }
+
     public CobblestoneFarmRoll() {
         this("air", 0);
     }
@@ -32,7 +38,7 @@ public final class CobblestoneFarmRoll {
     }
 
     public Block getAsBlock() {
-        return Registry.BLOCK.get(new Identifier(getBlock()));
+        return BLOCK.get(new Identifier(getBlock()));
     }
 
     public void setBlock(String block) {

@@ -2,65 +2,65 @@ package io.github.overrun.squidcraft.config;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import io.github.overrun.squidcraft.config.CompressorRecipe.Entry;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Reader;
-import java.io.Writer;
+import java.io.*;
 
 import static io.github.overrun.squidcraft.SquidCraft.logger;
+import static io.github.overrun.squidcraft.item.Items.COMPRESSED_SQUID_BLOCK;
+import static io.github.overrun.squidcraft.item.Items.SQUID_BLOCK;
+import static net.minecraft.block.Blocks.*;
 
 /**
  * @author squid233
  * @since 2020/12/27
  */
 public final class Configs {
+    public static final String FILENAME = "config/squidcraft/config.json";
     private static final Gson GSON = new GsonBuilder()
             .setPrettyPrinting()
             .disableHtmlEscaping()
             .registerTypeAdapter(Configurator.class, new Configurator.Serializer())
             .create();
-    private static Configurator configurator = new Configurator(new CobblestoneFarmRoll[0], new CompressorRecipe[0]);
+    private static Configurator configurator =
+            new Configurator(new CobblestoneFarmRoll[0], new CompressorRecipe[0]);
     public static final boolean FAILED = false;
     public static final boolean SUCCESS = true;
 
     public static boolean init() {
         logger.info("Loading configs!");
         File cfg = new File("config/squidcraft");
-        File cfgF = new File("config/squidcraft/config.json");
+        File cfgF = new File(FILENAME);
         if (!cfg.exists()) {
-            if (cfg.mkdirs()) {
-                try (Writer w = new FileWriter(cfgF)) {
-                    w.write(GSON.toJson(configurator = new Configurator(
-                            new CobblestoneFarmRoll[]{
-                                    new CobblestoneFarmRoll("obsidian", 1),
-                                    new CobblestoneFarmRoll("ancient_debris", 2),
-                                    new CobblestoneFarmRoll("diamond_ore", 3),
-                                    new CobblestoneFarmRoll("emerald_ore", 4),
-                                    new CobblestoneFarmRoll("nether_quartz_ore", 5),
-                                    new CobblestoneFarmRoll("nether_gold_ore", 6),
-                                    new CobblestoneFarmRoll("gold_ore", 7),
-                                    new CobblestoneFarmRoll("redstone_ore", 8),
-                                    new CobblestoneFarmRoll("lapis_ore", 9),
-                                    new CobblestoneFarmRoll("iron_ore", 10),
-                                    new CobblestoneFarmRoll("coal_ore", 11),
-                                    new CobblestoneFarmRoll("stone", 50),
-                                    new CobblestoneFarmRoll("cobblestone", 100)
-                            },
-                            new CompressorRecipe[]{
-                                    new CompressorRecipe(
-                                            new CompressorRecipe.In("squidcraft:squid_block", 9),
-                                            new CompressorRecipe.Out("squidcraft:compression_squid_block")
-                                    )
-                            }
-                    )));
-                } catch (IOException e) {
-                    logger.error("Can't write configs to local!");
-                    logger.catching(e);
-                    return FAILED;
-                }
+            cfg.mkdirs();
+            try (Writer w = new FileWriter(cfgF)) {
+                w.write(GSON.toJson(configurator = new Configurator(
+                        new CobblestoneFarmRoll[]{
+                                new CobblestoneFarmRoll(OBSIDIAN, 1),
+                                new CobblestoneFarmRoll(ANCIENT_DEBRIS, 2),
+                                new CobblestoneFarmRoll(DIAMOND_ORE, 3),
+                                new CobblestoneFarmRoll(EMERALD_ORE, 4),
+                                new CobblestoneFarmRoll(NETHER_QUARTZ_ORE, 5),
+                                new CobblestoneFarmRoll(NETHER_GOLD_ORE, 6),
+                                new CobblestoneFarmRoll(GOLD_ORE, 7),
+                                new CobblestoneFarmRoll(REDSTONE_ORE, 8),
+                                new CobblestoneFarmRoll(LAPIS_ORE, 9),
+                                new CobblestoneFarmRoll(IRON_ORE, 10),
+                                new CobblestoneFarmRoll(COAL_ORE, 11),
+                                new CobblestoneFarmRoll(STONE, 50),
+                                new CobblestoneFarmRoll(COBBLESTONE, 100)
+                        },
+                        new CompressorRecipe[]{
+                                new CompressorRecipe(
+                                        new Entry(SQUID_BLOCK, 9),
+                                        new Entry(COMPRESSED_SQUID_BLOCK)
+                                )
+                        }
+                )));
+            } catch (IOException e) {
+                logger.error("Can't write configs to local!");
+                logger.catching(e);
+                return FAILED;
             }
         } else {
             try (Reader r = new FileReader(cfgF)) {
@@ -76,7 +76,7 @@ public final class Configs {
     }
 
     public static void store() {
-        try (Writer w = new FileWriter("config/squidcraft/config.json")) {
+        try (Writer w = new FileWriter(FILENAME)) {
             w.write(GSON.toJson(configurator));
         } catch (IOException e) {
             logger.error("Can't write configs to local!");

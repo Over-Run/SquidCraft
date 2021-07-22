@@ -4,16 +4,7 @@ import io.github.overrun.squidcraft.block.Blocks;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.AxeItem;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.FoodComponent;
-import net.minecraft.item.HoeItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.PickaxeItem;
-import net.minecraft.item.ShovelItem;
-import net.minecraft.item.SwordItem;
+import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -49,9 +40,9 @@ public final class Items {
     public static final Item SQUID_CHESTPLATE = register("squid_chestplate", new ArmorItem(ArmorMaterials.SQUID, EquipmentSlot.CHEST, getDefault()));
     public static final Item SQUID_LEGGINGS = register("squid_leggings", new ArmorItem(ArmorMaterials.SQUID, EquipmentSlot.LEGS, getDefault()));
     public static final Item SQUID_BOOTS = register("squid_boots", new ArmorItem(ArmorMaterials.SQUID, EquipmentSlot.FEET, getDefault()));
-    public static final Item SQUID_AXE = register("squid_axe", new AxeItem(ToolMaterials.SQUID, 6.0f, -3.1f, getDefault()) {});
-    public static final Item SQUID_HOE = register("squid_hoe", new HoeItem(ToolMaterials.SQUID, -2, -1.0f, getDefault()) {});
-    public static final Item SQUID_PICKAXE = register("squid_pickaxe", new PickaxeItem(ToolMaterials.SQUID, 1, -2.8f, getDefault()) {});
+    public static final Item SQUID_AXE = register("squid_axe", new ItemAxe(ToolMaterials.SQUID, 6.0f, -3.1f, getDefault()));
+    public static final Item SQUID_HOE = register("squid_hoe", new ItemHoe(ToolMaterials.SQUID, -2, -1.0f, getDefault()));
+    public static final Item SQUID_PICKAXE = register("squid_pickaxe", new ItemPickaxe(ToolMaterials.SQUID, 1, -2.8f, getDefault()));
     public static final Item SQUID_SHOVEL = register("squid_shovel", new ShovelItem(ToolMaterials.SQUID, 1.5f, -3.0f, getDefault()));
     public static final Item SQUID_SWORD = register("squid_sword", new SwordItem(ToolMaterials.SQUID, 3, -2.4f, getDefault()));
 
@@ -59,7 +50,7 @@ public final class Items {
 
     public static final Item SOUL_JACK_O_LANTERN = register(Blocks.SOUL_JACK_O_LANTERN, getMisc());
     public static final Item SQUID_BLOCK = createBlockMeat(50, 1.4f, Blocks.SQUID_BLOCK, getDefault());
-    public static final Item COMPRESSION_SQUID_BLOCK = createBlockMeat(70, 2.5f, Blocks.COMPRESSION_SQUID_BLOCK, getDefault());
+    public static final Item COMPRESSED_SQUID_BLOCK = createBlockMeat(70, 2.5f, Blocks.COMPRESSED_SQUID_BLOCK, getDefault());
 
     public static final Item VERTICAL_OAK_SLAB = vtcSlbItm(Blocks.VERTICAL_OAK_SLAB);
     public static final Item VERTICAL_SPRUCE_SLAB = vtcSlbItm(Blocks.VERTICAL_SPRUCE_SLAB);
@@ -104,6 +95,9 @@ public final class Items {
 
     public static final Item COMPRESSOR_BLOCK = register(Blocks.COMPRESSOR_BLOCK, getDefault());
 
+    public static void load() {
+    }
+
     // Block Items End
 
     public static Item register(Block block, Item.Settings settings) {
@@ -125,7 +119,9 @@ public final class Items {
     private static FoodItem createMeat(int hunger, float sat, boolean isBig) {
         return FoodItem.of(b -> {
             b.hunger(hunger).saturationModifier(sat).meat();
-            if (isBig) { b.alwaysEdible(); }
+            if (isBig) {
+                b.alwaysEdible();
+            }
         });
     }
 

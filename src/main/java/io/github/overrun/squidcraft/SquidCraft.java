@@ -38,12 +38,8 @@ public final class SquidCraft implements ModInitializer {
     }
 
     private void registerGameObj() {
-        try {
-            Class.forName(Blocks.class.getName());
-            Class.forName(Items.class.getName());
-        } catch (ClassNotFoundException e) {
-            logger.catching(e);
-        }
+        Blocks.load();
+        Items.load();
     }
 
     private void registerEvents() {

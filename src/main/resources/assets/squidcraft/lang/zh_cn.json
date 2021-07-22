@@ -10,9 +10,9 @@
   "advancements.squidcraft.squid_tools.desc": "集齐鱿鱼工具（包括斧锄镐锹剑）",
   "advancements.squidcraft.squid_block.desc": "尝试建房子或压缩它！",
   "advancements.squidcraft.compressor_block.desc": "鱿鱼工艺中的第一台机器",
-  "advancements.squidcraft.compression_squid_block.desc": "成功压缩了一个鱿鱼块",
+  "advancements.squidcraft.compressed_squid_block.desc": "成功压缩了一个鱿鱼块",
   "advancements.squidcraft.iron_plate.desc": "装几只鱿鱼",
-  "advancements.squidcraft.sizzling_squid.desc": "真香！",
+  "advancements.squidcraft.sizzling_squid.desc": "Yum!",
 
   "item.squidcraft.shredded_squid": "鱿鱼丝",
   "item.squidcraft.cooked_shredded_squid": "熟鱿鱼丝",
@@ -33,7 +33,7 @@
 
   "block.squidcraft.soul_jack_o_lantern": "灵魂南瓜灯",
   "block.squidcraft.squid_block": "鱿鱼块",
-  "block.squidcraft.compression_squid_block": "压缩鱿鱼块",
+  "block.squidcraft.compressed_squid_block": "压缩鱿鱼块",
   "block.squidcraft.compressor_block": "压缩机",
 
   "block.squidcraft.vertical_oak_slab": "竖橡木台阶",
