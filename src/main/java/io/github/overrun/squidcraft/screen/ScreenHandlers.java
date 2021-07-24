@@ -17,6 +17,6 @@ public final class ScreenHandlers {
     private static <T extends ScreenHandler> ScreenHandlerType<T>
         register(String id,
                  ScreenHandlerRegistry.SimpleClientHandlerFactory<T> factory) {
-        return ScreenHandlerRegistry.registerSimple(new Identifier(SquidCraft.MODID, id), factory);
+        return ScreenHandlerRegistry.registerSimple(new Identifier(SquidCraft.ID, id), factory);
     }
 }

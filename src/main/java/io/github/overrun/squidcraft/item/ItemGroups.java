@@ -8,7 +8,7 @@ import net.minecraft.util.Identifier;
 
 import java.util.List;
 
-import static io.github.overrun.squidcraft.SquidCraft.MODID;
+import static io.github.overrun.squidcraft.SquidCraft.ID;
 import static io.github.overrun.squidcraft.item.Items.*;
 import static net.minecraft.item.Items.SQUID_SPAWN_EGG;
 
@@ -18,7 +18,7 @@ import static net.minecraft.item.Items.SQUID_SPAWN_EGG;
  */
 public final class ItemGroups {
     @SuppressWarnings("unused")
-    public static final ItemGroup SQUIDCRAFT = FabricItemGroupBuilder.create(new Identifier(MODID, "squidcraft"))
+    public static final ItemGroup SQUIDCRAFT = FabricItemGroupBuilder.create(new Identifier(ID, "squidcraft"))
             .icon(() -> new ItemStack(SQUID_COOKIE))
             .appendItems(stacks -> addAll(stacks, SQUID_SPAWN_EGG,
                     SHREDDED_SQUID, COOKED_SHREDDED_SQUID, SQUID_COOKIE,
@@ -27,7 +27,7 @@ public final class ItemGroups {
                     SQUID_AXE, SQUID_HOE, SQUID_PICKAXE, SQUID_SHOVEL, SQUID_SWORD,
                     SQUID_BLOCK, COMPRESSOR_BLOCK, COMPRESSED_SQUID_BLOCK))
             .build();
-    public static final ItemGroup MISC = FabricItemGroupBuilder.build(new Identifier(MODID, "misc"),
+    public static final ItemGroup MISC = FabricItemGroupBuilder.build(new Identifier(ID, "misc"),
             () -> new ItemStack(SOUL_JACK_O_LANTERN));
 
     public static void addAll(List<ItemStack> stacks, Item... items) {

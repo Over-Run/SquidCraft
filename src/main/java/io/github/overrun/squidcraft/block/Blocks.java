@@ -14,7 +14,7 @@ import net.minecraft.util.registry.Registry;
 
 import java.util.function.Supplier;
 
-import static io.github.overrun.squidcraft.SquidCraft.MODID;
+import static io.github.overrun.squidcraft.SquidCraft.ID;
 import static net.minecraft.block.AbstractBlock.Settings.copy;
 import static net.minecraft.block.AbstractBlock.Settings.of;
 import static net.minecraft.block.Blocks.*;
@@ -87,7 +87,7 @@ public final class Blocks {
     }
 
     private static Block register(String id, Block block) {
-        return Registry.register(Registry.BLOCK, new Identifier(MODID, id), block);
+        return Registry.register(Registry.BLOCK, new Identifier(ID, id), block);
     }
 
     private static <T extends BlockEntity>
@@ -95,7 +95,7 @@ public final class Blocks {
                                 Supplier<T> supplier,
                                 Block block) {
         return Registry.register(Registry.BLOCK_ENTITY_TYPE,
-                new Identifier(MODID, id),
+                new Identifier(ID, id),
                 BlockEntityType.Builder.create(supplier, block)
                         .build(null));
     }

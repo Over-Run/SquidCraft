@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
 
-import static io.github.overrun.squidcraft.SquidCraft.MODID;
+import static io.github.overrun.squidcraft.SquidCraft.ID;
 
 /**
  * @author squid233
@@ -38,7 +38,7 @@ public final class FoodItem {
 
     public Item build(String id, Item.Settings settings) {
         return Registry.register(Registry.ITEM,
-                new Identifier(MODID, id),
+                new Identifier(ID, id),
                 new Item(settings.food(component)) {
                     @Override
                     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {

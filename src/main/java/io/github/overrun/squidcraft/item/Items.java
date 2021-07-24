@@ -8,7 +8,7 @@ import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-import static io.github.overrun.squidcraft.SquidCraft.MODID;
+import static io.github.overrun.squidcraft.SquidCraft.ID;
 import static io.github.overrun.squidcraft.item.ItemGroups.MISC;
 
 /**
@@ -109,7 +109,7 @@ public final class Items {
     }
 
     private static Item register(String id, Item item) {
-        return Registry.register(Registry.ITEM, new Identifier(MODID, id), item);
+        return Registry.register(Registry.ITEM, new Identifier(ID, id), item);
     }
 
     private static Item register(String id, Item.Settings settings) {
