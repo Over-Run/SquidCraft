@@ -1,6 +1,8 @@
 package io.github.overrun.squidcraft;
 
+import io.github.overrun.squidcraft.api.registry.AutoRegistry;
 import io.github.overrun.squidcraft.block.Blocks;
+import io.github.overrun.squidcraft.block.entity.BlockEntityTypes;
 import io.github.overrun.squidcraft.cmd.Commands;
 import io.github.overrun.squidcraft.config.Configs;
 import io.github.overrun.squidcraft.item.Items;
@@ -12,7 +14,7 @@ import net.minecraft.loot.ConstantLootTableRange;
 import net.minecraft.loot.LootTableRange;
 import net.minecraft.loot.UniformLootTableRange;
 import net.minecraft.loot.condition.EntityPropertiesLootCondition;
-import net.minecraft.loot.context.LootContext;
+import net.minecraft.loot.context.LootContext.EntityTarget;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.entry.LootPoolEntry;
 import net.minecraft.loot.function.FurnaceSmeltLootFunction;
@@ -37,8 +39,9 @@ public final class SquidCraft implements ModInitializer {
     @Override
     public void onInitialize() {
         Configs.init();
-        Blocks.load();
-        Items.load();
+        AutoRegistry.registerBlock(Blocks.class);
+        AutoRegistry.registerBET(BlockEntityTypes.class);
+        AutoRegistry.registerItem(Items.class);
         addLootTables();
         Commands.register();
     }
@@ -67,7 +70,7 @@ public final class SquidCraft implements ModInitializer {
         return ItemEntry.builder(item).build();
     }
 
-    private LootFunction smelt(LootContext.EntityTarget target, boolean onFire) {
+    private LootFunction smelt(EntityTarget target, boolean onFire) {
         return FurnaceSmeltLootFunction.builder().conditionally(
                 EntityPropertiesLootCondition.builder(
                         target,
@@ -86,7 +89,7 @@ public final class SquidCraft implements ModInitializer {
                 builder.withPool(FabricLootPoolBuilder.builder()
                         .rolls(range(1))
                         .withFunction(count(1.0f, 3.0f))
-                        .withFunction(smelt(LootContext.EntityTarget.THIS, true))
+                        .withFunction(smelt(EntityTarget.THIS, true))
                         .withFunction(enchant(0.0f, 1.0f))
                         .withEntry(entry(Items.SHREDDED_SQUID))
                         .build()

@@ -25,11 +25,17 @@ import static net.minecraft.util.math.Direction.NORTH;
  * @since 2020/12/20
  */
 public class VerticalSlabBlock extends HorizontalFacingBlock implements Waterloggable {
+    private static final VoxelShape NORTH_S = createCuboidShape(0.0f, 0.0f, 0.0f, 16.0f, 16.0f, 8.0f);
+    private static final VoxelShape SOUTH_S = createCuboidShape(0.0f, 0.0f, 8.0f, 16.0f, 16.0f, 16.0f);
+    private static final VoxelShape EAST_S = createCuboidShape(8.0f, 0.0f, 0.0f, 16.0f, 16.0f, 16.0f);
+    private static final VoxelShape WEST_S = createCuboidShape(0.0f, 0.0f, 0.0f, 8.0f, 16.0f, 16.0f);
+
     public VerticalSlabBlock(Settings settings) {
         super(settings);
         setDefaultState(stateManager.getDefaultState()
                 .with(HORIZONTAL_FACING, NORTH)
                 .with(WATERLOGGED, false));
+        
     }
 
     @Override
@@ -47,13 +53,13 @@ public class VerticalSlabBlock extends HorizontalFacingBlock implements Waterlog
     public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext ctx) {
         switch (state.get(FACING)) {
             case NORTH:
-                return VoxelShapes.cuboid(0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.5f);
+                return NORTH_S;
             case SOUTH:
-                return VoxelShapes.cuboid(0.0f, 0.0f, 0.5f, 1.0f, 1.0f, 1.0f);
+                return SOUTH_S;
             case EAST:
-                return VoxelShapes.cuboid(0.5f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f);
+                return EAST_S;
             case WEST:
-                return VoxelShapes.cuboid(0.0f, 0.0f, 0.0f, 0.5f, 1.0f, 1.0f);
+                return WEST_S;
             default:
                 return VoxelShapes.fullCube();
         }

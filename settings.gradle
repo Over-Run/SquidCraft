@@ -2,10 +2,10 @@ pluginManagement {
     repositories {
         maven { url 'https://maven.fabricmc.net/' }
         maven { url 'https://maven.modmuss50.me/' }
-        maven { url 'https://crystal.app.lss233.com/repositories/minecraft/' }
         mavenCentral()
         maven { url 'https://maven.aliyun.com/repository/public/' }
         maven { url 'https://maven.aliyun.com/repository/gradle-plugin/' }
         gradlePluginPortal()
+        maven { url 'https://crystal.app.lss233.com/repositories/minecraft/' }
     }
 }

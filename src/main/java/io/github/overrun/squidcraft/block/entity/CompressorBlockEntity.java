@@ -1,7 +1,6 @@
 package io.github.overrun.squidcraft.block.entity;
 
 import io.github.overrun.squidcraft.api.inventory.ImplementedInventory;
-import io.github.overrun.squidcraft.block.Blocks;
 import io.github.overrun.squidcraft.screen.CompressorScreenHandler;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -29,7 +28,7 @@ public class CompressorBlockEntity extends BlockEntity implements NamedScreenHan
     private DefaultedList<ItemStack> inventory = DefaultedList.ofSize(2, ItemStack.EMPTY);
 
     public CompressorBlockEntity() {
-        super(Blocks.COMPRESSOR_BLOCK_ENTITY);
+        super(BlockEntityTypes.COMPRESSOR_BLOCK_ENTITY);
     }
 
     @Override

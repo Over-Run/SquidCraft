@@ -5,7 +5,9 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "FluidBlockMixin",
-    "PlayerEntityMixin"
+    "PlayerEntityMixin",
+    "SquidEntityMixin",
+    "BlockMixin"
   ],
   "client": [
     "AdvancementTabMixin",

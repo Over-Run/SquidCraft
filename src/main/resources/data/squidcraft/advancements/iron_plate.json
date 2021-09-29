@@ -21,5 +21,8 @@
         ]
       }
     }
+  },
+  "rewards": {
+    "recipes": ["squidcraft:sizzling_squid"]
   }
 }

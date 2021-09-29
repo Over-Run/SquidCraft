@@ -7,6 +7,11 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.tag.ItemTags;
 
+import java.util.Objects;
+
+import static io.github.overrun.squidcraft.item.Items.SQUID_COOKIE;
+import static net.minecraft.item.Items.GOLD_INGOT;
+
 /**
  * @author squid233
  * @since 2020/12/26
@@ -14,28 +19,28 @@ import net.minecraft.tag.ItemTags;
 public final class ArmorMaterials {
     public static final int[] BASE_DURABILITY = new int[]{13, 15, 16, 11};
 
-    public static final ArmorMaterial XMAS = ArmorMaterials.of("xmas")
+    public static final ArmorMaterial XMAS = of("xmas")
             .durabilityMultiplier(1)
-            .protectionAmounts(new int[]{1, 3, 2, 1})
+            .protectionAmounts(1, 3, 2, 1)
             .enchantability(10)
             .equipSound(SoundEvents.ITEM_ARMOR_EQUIP_LEATHER)
             .repairIngredient(Ingredient.fromTag(ItemTags.WOOL))
             .toughness(0.0f)
             .knockbackResistance(0.0f)
             .build();
-    public static final ArmorMaterial SQUID = ArmorMaterials.of("squid")
+    public static final ArmorMaterial SQUID = of("squid")
             .durabilityMultiplier(33)
-            .protectionAmounts(new int[]{3, 8, 6, 3})
+            .protectionAmounts(3, 8, 6, 3)
             .enchantability(10)
             .equipSound(SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND)
-            .repairIngredient(Ingredient.ofItems(Items.SQUID_COOKIE))
+            .repairIngredient(Ingredient.ofItems(SQUID_COOKIE))
             .build();
-    public static final ArmorMaterial MINER = ArmorMaterials.of("miner")
+    public static final ArmorMaterial MINER = of("miner")
             .durabilityMultiplier(134217727)
-            .protectionAmounts(new int[]{2, 5, 3, 1})
+            .protectionAmounts(2, 5, 3, 1)
             .enchantability(10)
             .equipSound(SoundEvents.ITEM_ARMOR_EQUIP_GOLD)
-            .repairIngredient(Ingredient.ofItems(net.minecraft.item.Items.GOLD_INGOT))
+            .repairIngredient(Ingredient.ofItems(GOLD_INGOT))
             .build();
 
     private final String name;
@@ -60,7 +65,7 @@ public final class ArmorMaterials {
         return this;
     }
 
-    public ArmorMaterials protectionAmounts(int[] protectionAmounts) {
+    public ArmorMaterials protectionAmounts(int... protectionAmounts) {
         if (protectionAmounts.length >= 4) {
             return headProtection(protectionAmounts[0])
                     .chestProtection(protectionAmounts[1])
@@ -144,10 +149,7 @@ public final class ArmorMaterials {
 
             @Override
             public String getName() {
-                if (name == null) {
-                    throw new IllegalStateException("ArmorMaterial name is null!");
-                }
-                return name;
+                return Objects.requireNonNull(name, "ArmorMaterial name is null!");
             }
 
             @Override

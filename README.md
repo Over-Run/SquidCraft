@@ -15,6 +15,6 @@ Welcome to play SquidCraft.
 
 - QQ群: 1078745269
 - Discord: [join](https://discord.gg/yDrFqRU)
-- [MCBBS](https://www.mcbbs.net/thread-1025201-1-1.html)
+<!-- [MCBBS](https://www.mcbbs.net/thread-1025201-1-1.html) -->
 - [CurseForge](https://www.curseforge.com/minecraft/mc-mods/squidcraft)
 - [MCMOD](https://www.mcmod.cn/class/2507.html)
