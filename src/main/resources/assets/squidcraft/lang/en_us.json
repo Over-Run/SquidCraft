@@ -30,6 +30,7 @@
   "item.squidcraft.miner_hat": "Miner Hat",
   "item.squidcraft.iron_plate": "Iron Plate",
   "item.squidcraft.sizzling_squid": "Sizzling Squid",
+  "item.squidcraft.milk_bucket": "Milk Bucket",
 
   "block.squidcraft.soul_jack_o_lantern": "Soul Jack o'Lantern",
   "block.squidcraft.squid_block": "Block of Squid",
@@ -82,6 +83,8 @@
 
   "itemGroup.squidcraft.squidcraft": "SquidCraft",
   "itemGroup.squidcraft.misc": "Squidcraft Miscellaneous",
+
+  "biome.squidcraft.squid_biome": "Squid Biome",
 
   "text.squidcraft.hun": "Hunger: %d",
   "text.squidcraft.reloadConfig": "Reload Configs",

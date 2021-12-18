@@ -1,10 +1,12 @@
 package io.github.overrun.squidcraft.screen;
 
-import io.github.overrun.squidcraft.SquidCraft;
 import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
+import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry.SimpleClientHandlerFactory;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
+
+import static io.github.overrun.squidcraft.SquidCraft.ID;
 
 /**
  * @author squid233
@@ -16,7 +18,7 @@ public final class ScreenHandlers {
 
     private static <T extends ScreenHandler> ScreenHandlerType<T>
         register(String id,
-                 ScreenHandlerRegistry.SimpleClientHandlerFactory<T> factory) {
-        return ScreenHandlerRegistry.registerSimple(new Identifier(SquidCraft.ID, id), factory);
+                 SimpleClientHandlerFactory<T> factory) {
+        return ScreenHandlerRegistry.registerSimple(new Identifier(ID, id), factory);
     }
 }

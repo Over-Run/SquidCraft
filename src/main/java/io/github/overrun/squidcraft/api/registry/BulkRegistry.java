@@ -3,6 +3,7 @@ package io.github.overrun.squidcraft.api.registry;
 import io.github.overrun.squidcraft.SquidCraft;
 import net.minecraft.block.Block;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.fluid.Fluid;
 import net.minecraft.item.Item;
 import net.minecraft.util.registry.Registry;
 
@@ -17,7 +18,7 @@ import java.util.function.Function;
  * @author squid233
  * @since 0.12.0
  */
-public class AutoRegistry {
+public class BulkRegistry {
     private static <R> void register_(Class<?> clazz,
                                       Function<Object, R> casting,
                                       Registry<R> registry) {
@@ -94,6 +95,15 @@ public class AutoRegistry {
             }
             return null;
         }, Registry.BLOCK_ENTITY_TYPE);
+    }
+
+    public static void registerFluid(Class<?> clazz) {
+        register_(clazz, o -> {
+            if (o instanceof Fluid) {
+                return (Fluid) o;
+            }
+            return null;
+        }, Registry.FLUID);
     }
 
     @Retention(RetentionPolicy.RUNTIME)

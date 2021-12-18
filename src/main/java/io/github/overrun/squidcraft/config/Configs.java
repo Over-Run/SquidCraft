@@ -16,7 +16,7 @@ import static net.minecraft.block.Blocks.*;
  * @since 2020/12/27
  */
 public final class Configs {
-    public static final String FILENAME = "config/squidcraft/config.json";
+    public static final File CFG_FILE = new File("config/squidcraft/config.json");
     private static final Gson GSON = new GsonBuilder()
             .setPrettyPrinting()
             .disableHtmlEscaping()
@@ -29,41 +29,35 @@ public final class Configs {
 
     public static boolean init() {
         logger.info("Loading configs!");
-        File cfg = new File("config/squidcraft");
-        File cfgF = new File(FILENAME);
-        if (!cfg.exists()) {
-            cfg.mkdirs();
-            try (Writer w = new FileWriter(cfgF)) {
-                w.write(GSON.toJson(configurator = new Configurator(
-                        new CobblestoneFarmRoll[]{
-                                new CobblestoneFarmRoll(OBSIDIAN, 1),
-                                new CobblestoneFarmRoll(ANCIENT_DEBRIS, 2),
-                                new CobblestoneFarmRoll(DIAMOND_ORE, 3),
-                                new CobblestoneFarmRoll(EMERALD_ORE, 4),
-                                new CobblestoneFarmRoll(NETHER_QUARTZ_ORE, 5),
-                                new CobblestoneFarmRoll(NETHER_GOLD_ORE, 6),
-                                new CobblestoneFarmRoll(GOLD_ORE, 7),
-                                new CobblestoneFarmRoll(REDSTONE_ORE, 8),
-                                new CobblestoneFarmRoll(LAPIS_ORE, 9),
-                                new CobblestoneFarmRoll(IRON_ORE, 10),
-                                new CobblestoneFarmRoll(COAL_ORE, 11),
-                                new CobblestoneFarmRoll(STONE, 50),
-                                new CobblestoneFarmRoll(COBBLESTONE, 100)
-                        },
-                        new CompressorRecipe[]{
-                                new CompressorRecipe(
-                                        new Entry(SQUID_BLOCK, 9),
-                                        new Entry(COMPRESSED_SQUID_BLOCK)
-                                )
-                        }
-                )));
-            } catch (IOException e) {
-                logger.error("Can't write configs to local!");
-                logger.catching(e);
-                return FAILED;
-            }
+        File parent = CFG_FILE.getParentFile();
+        if (!parent.exists()) {
+            parent.mkdirs();
+            configurator = new Configurator(
+                    new CobblestoneFarmRoll[]{
+                            new CobblestoneFarmRoll(OBSIDIAN, 1),
+                            new CobblestoneFarmRoll(ANCIENT_DEBRIS, 2),
+                            new CobblestoneFarmRoll(DIAMOND_ORE, 3),
+                            new CobblestoneFarmRoll(EMERALD_ORE, 4),
+                            new CobblestoneFarmRoll(NETHER_QUARTZ_ORE, 5),
+                            new CobblestoneFarmRoll(NETHER_GOLD_ORE, 6),
+                            new CobblestoneFarmRoll(GOLD_ORE, 7),
+                            new CobblestoneFarmRoll(REDSTONE_ORE, 8),
+                            new CobblestoneFarmRoll(LAPIS_ORE, 9),
+                            new CobblestoneFarmRoll(IRON_ORE, 10),
+                            new CobblestoneFarmRoll(COAL_ORE, 11),
+                            new CobblestoneFarmRoll(STONE, 50),
+                            new CobblestoneFarmRoll(COBBLESTONE, 100)
+                    },
+                    new CompressorRecipe[]{
+                            new CompressorRecipe(
+                                    new Entry(SQUID_BLOCK, 9),
+                                    new Entry(COMPRESSED_SQUID_BLOCK)
+                            )
+                    }
+            );
+            store();
         } else {
-            try (Reader r = new FileReader(cfgF)) {
+            try (Reader r = new FileReader(CFG_FILE)) {
                 configurator = GSON.fromJson(r, Configurator.class);
             } catch (IOException e) {
                 logger.error("Can't read configs!");
@@ -76,7 +70,7 @@ public final class Configs {
     }
 
     public static void store() {
-        try (Writer w = new FileWriter(FILENAME)) {
+        try (Writer w = new FileWriter(CFG_FILE)) {
             w.write(GSON.toJson(configurator));
         } catch (IOException e) {
             logger.error("Can't write configs to local!");

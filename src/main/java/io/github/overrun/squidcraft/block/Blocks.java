@@ -1,13 +1,12 @@
 package io.github.overrun.squidcraft.block;
 
-import io.github.overrun.squidcraft.api.registry.AutoRegistry;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.MapColor;
-import net.minecraft.block.Material;
+import io.github.overrun.squidcraft.api.registry.BulkRegistry;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.*;
 import net.minecraft.sound.BlockSoundGroup;
 
 import static io.github.overrun.squidcraft.SquidCraft.ID;
+import static io.github.overrun.squidcraft.fluid.Fluids.STILL_MILK;
 import static net.minecraft.block.AbstractBlock.Settings.copy;
 import static net.minecraft.block.AbstractBlock.Settings.of;
 import static net.minecraft.block.Blocks.*;
@@ -16,9 +15,9 @@ import static net.minecraft.block.Blocks.*;
  * @author squid233
  * @since 2020/12/19
  */
-@AutoRegistry.ModID(ID)
+@BulkRegistry.ModID(ID)
 public final class Blocks {
-    @AutoRegistry.Ignore
+    @BulkRegistry.Ignore
     public static final Material FOOD = new Material.Builder(MapColor.TERRACOTTA_WHITE).build();
 
     public static final Block SOUL_JACK_O_LANTERN =
@@ -71,6 +70,8 @@ public final class Blocks {
     public static final Block VERTICAL_POLISHED_BLACKSTONE_BRICK_SLAB = vsb(POLISHED_BLACKSTONE_BRICK_SLAB);
 
     public static final Block COMPRESSOR_BLOCK = new CompressorBlock(copy(IRON_BLOCK));
+
+    public static final Block MILK = new FluidBlock(STILL_MILK, FabricBlockSettings.copy(WATER)) {};
 
     private static Block vsb(AbstractBlock block) {
         return new VerticalSlabBlock(copy(block));

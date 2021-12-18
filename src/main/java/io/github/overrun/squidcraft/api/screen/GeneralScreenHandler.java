@@ -34,7 +34,7 @@ public class GeneralScreenHandler extends ScreenHandler {
                 addSlot(new Slot(pInv, l + m * 9 + 9, 8 + l * 18, 84 + m * 18));
             }
         }
-        // The player Hotbar
+        // The player hotbar
         for (m = 0; m < 9; ++m) {
             addSlot(new Slot(pInv, m, 8 + m * 18, 142));
         }

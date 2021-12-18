@@ -30,6 +30,7 @@
   "item.squidcraft.miner_hat": "礦工帽",
   "item.squidcraft.iron_plate": "鐵盤",
   "item.squidcraft.sizzling_squid": "鐵板魷魚",
+  "item.squidcraft.milk_bucket": "奶桶",
 
   "block.squidcraft.soul_jack_o_lantern": "靈魂南瓜燈",
   "block.squidcraft.squid_block": "魷魚塊",
@@ -77,11 +78,13 @@
   "block.squidcraft.vertical_polished_blackstone_slab": "竖拋光黑石半磚",
   "block.squidcraft.vertical_polished_blackstone_brick_slab": "竖拋光黑石磚半磚",
 
+  "commands.squidcraft.config.add": "已添加配置“%s”。",
+  "commands.squidcraft.config.add.restart": "當完成所有變更時，請重啟或使用“/squidcraft config reload”指令。",
+
   "itemGroup.squidcraft.squidcraft": "魷魚工藝",
   "itemGroup.squidcraft.misc": "魷魚工藝 雜項",
 
-  "commands.squidcraft.config.add": "已添加配置“%s”。",
-  "commands.squidcraft.config.add.restart": "當完成所有變更時，請重啟或使用“/squidcraft config reload”指令。",
+  "biome.squidcraft.squid_biome": "魷魚群落",
 
   "text.squidcraft.hun": "飢餓值：%d",
   "text.squidcraft.reloadConfig": "重載配置",

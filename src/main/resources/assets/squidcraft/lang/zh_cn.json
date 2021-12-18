@@ -30,6 +30,7 @@
   "item.squidcraft.miner_hat": "矿工帽",
   "item.squidcraft.iron_plate": "铁盘",
   "item.squidcraft.sizzling_squid": "铁板鱿鱼",
+  "item.squidcraft.milk_bucket": "奶桶",
 
   "block.squidcraft.soul_jack_o_lantern": "灵魂南瓜灯",
   "block.squidcraft.squid_block": "鱿鱼块",
@@ -82,6 +83,8 @@
 
   "itemGroup.squidcraft.squidcraft": "鱿鱼工艺",
   "itemGroup.squidcraft.misc": "鱿鱼工艺 杂项",
+
+  "biome.squidcraft.squid_biome": "鱿鱼群系",
 
   "text.squidcraft.hun": "饥饿值：%d",
   "text.squidcraft.reloadConfig": "重载配置",

@@ -1,11 +1,13 @@
 package io.github.overrun.squidcraft;
 
-import io.github.overrun.squidcraft.api.registry.AutoRegistry;
+import io.github.overrun.squidcraft.api.registry.BulkRegistry;
 import io.github.overrun.squidcraft.block.Blocks;
 import io.github.overrun.squidcraft.block.entity.BlockEntityTypes;
 import io.github.overrun.squidcraft.cmd.Commands;
 import io.github.overrun.squidcraft.config.Configs;
+import io.github.overrun.squidcraft.fluid.Fluids;
 import io.github.overrun.squidcraft.item.Items;
+import io.github.overrun.squidcraft.world.Biomes;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.loot.v1.FabricLootPoolBuilder;
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
@@ -38,12 +40,14 @@ public final class SquidCraft implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        Configs.init();
-        AutoRegistry.registerBlock(Blocks.class);
-        AutoRegistry.registerBET(BlockEntityTypes.class);
-        AutoRegistry.registerItem(Items.class);
+        BulkRegistry.registerFluid(Fluids.class);
+        BulkRegistry.registerBlock(Blocks.class);
+        BulkRegistry.registerBET(BlockEntityTypes.class);
+        BulkRegistry.registerItem(Items.class);
+        Biomes.register();
         addLootTables();
         Commands.register();
+        Configs.init();
     }
 
     private LootTableRange range(int range) {
