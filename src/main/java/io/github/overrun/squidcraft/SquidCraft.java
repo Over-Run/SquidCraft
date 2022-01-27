@@ -12,9 +12,6 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.loot.v1.FabricLootPoolBuilder;
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 import net.minecraft.item.ItemConvertible;
-import net.minecraft.loot.ConstantLootTableRange;
-import net.minecraft.loot.LootTableRange;
-import net.minecraft.loot.UniformLootTableRange;
 import net.minecraft.loot.condition.EntityPropertiesLootCondition;
 import net.minecraft.loot.context.LootContext.EntityTarget;
 import net.minecraft.loot.entry.ItemEntry;
@@ -23,6 +20,9 @@ import net.minecraft.loot.function.FurnaceSmeltLootFunction;
 import net.minecraft.loot.function.LootFunction;
 import net.minecraft.loot.function.LootingEnchantLootFunction;
 import net.minecraft.loot.function.SetCountLootFunction;
+import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
+import net.minecraft.loot.provider.number.LootNumberProvider;
+import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.predicate.entity.EntityFlagsPredicate;
 import net.minecraft.predicate.entity.EntityPredicate;
 import net.minecraft.util.Identifier;
@@ -50,13 +50,13 @@ public final class SquidCraft implements ModInitializer {
         Configs.init();
     }
 
-    private LootTableRange range(int range) {
-        return ConstantLootTableRange.create(range);
+    private LootNumberProvider range(int range) {
+        return ConstantLootNumberProvider.create(range);
     }
 
     private LootFunction count(float min,
                                float max) {
-        return SetCountLootFunction.builder(new UniformLootTableRange(min, max)).build();
+        return SetCountLootFunction.builder( UniformLootNumberProvider.create(min, max)).build();
     }
 
     private EntityPredicate onFire(boolean onFire) {
@@ -67,7 +67,7 @@ public final class SquidCraft implements ModInitializer {
 
     private LootFunction enchant(float min,
                                  float max) {
-        return LootingEnchantLootFunction.builder(new UniformLootTableRange(min, max)).build();
+        return LootingEnchantLootFunction.builder(UniformLootNumberProvider.create(min, max)).build();
     }
 
     private LootPoolEntry entry(ItemConvertible item) {
